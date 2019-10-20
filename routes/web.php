@@ -15,6 +15,3 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('dosen','ControllerDosen@index');
-
-
