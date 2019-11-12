@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    const AGENT_TYPE = 'agent';
+    const DEFAULT_TYPE = 'default';
     use Notifiable;
 
     /**
@@ -36,4 +38,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAgent()    {        
+        return $this->type === self::AGENT_TYPE;    
+    }
 }

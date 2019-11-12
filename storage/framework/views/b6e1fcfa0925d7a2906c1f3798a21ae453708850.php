@@ -42,6 +42,8 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
 
+        Maiddo
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -70,9 +72,17 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+        <div id="app"><welcome></welcome></div>
+        <br>
+        <button>check identity</button>
+        <button>find housekeeper</button><br><br>
+        <button>promo</button><br><br>
+        
+        <h3>Saved Profile</h3>
+        <h3>Recently Viewed</h3>
+
+        <button>View Maid</button>
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->
