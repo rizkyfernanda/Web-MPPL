@@ -15,6 +15,7 @@
 				<th>religion</th>
 				<th>experienced years</th>
 				<th>description</th>
+				<th>picture</th>
 				<th>options</th>		
 			</tr>
 			<?php $__currentLoopData = $maids; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $maid): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -28,9 +29,9 @@
 				<td><?php echo e($maid->religion); ?></td>
 				<td><?php echo e($maid->exp_years); ?></td>
 				<td><?php echo e($maid->description); ?></td>
-				<td>
-				<a href="/agent/view-maids/edit/<?php echo e($maid->maid_id); ?>">Edit</a>
-			</td>
+				<td><a href="<?php echo e(url('/pictures/'.$maid->picture)); ?>">
+					<?php echo e($maid->picture); ?></a></td>
+				<td><a href="/agent/view-maids/edit/<?php echo e($maid->maid_id); ?>">Edit</a></td>
 			</tr>
 			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</table>

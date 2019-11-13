@@ -12,14 +12,14 @@
         <?php if(count($maids) === 1): ?>
 
             <?php $__currentLoopData = $maids; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $maid): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-                Name: <?php echo e($maid->maid_id); ?><br>
-                Age: <?php echo e($maid->name); ?><br>
-
+                Found!<br>
+                ID: <?php echo e($maid->maid_id); ?><br>
+                Name: <?php echo e($maid->name); ?><br>
+                Picture: <img width="150px" src="<?php echo e(url('/pictures/'.$maid->picture)); ?>"><br>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         <?php else: ?>
-            none
+           Not found. Make sure you fill in the correct ID
         <?php endif; ?>
 
     <?php $__env->stopSection(); ?>

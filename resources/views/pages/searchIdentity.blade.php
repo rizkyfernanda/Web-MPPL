@@ -12,14 +12,14 @@
         @if(count($maids) === 1)
 
             @foreach ($maids as $maid)
-
-                Name: {{ $maid->maid_id }}<br>
-                Age: {{ $maid->name }}<br>
-
+                Found!<br>
+                ID: {{ $maid->maid_id }}<br>
+                Name: {{ $maid->name }}<br>
+                Picture: <img width="150px" src="{{ url('/pictures/'.$maid->picture) }}"><br>
             @endforeach
 
         @else
-            none
+           Not found. Make sure you fill in the correct ID
         @endif
 
     @stop

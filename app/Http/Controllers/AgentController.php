@@ -35,20 +35,33 @@ class AgentController extends Controller
     	return view('agent-pages.maids',['maids' => $maids]);
 	}
 
+
+
 	public function add()
 	{
 		return view('agent-pages.add-maid');
 	}
 
 	public function store(Request $request)
-	{	
+	{
+
+		// Buat input2 jenis checkbox
 		$married = $request->married;
 		$settled = $request->settled;
 
+		// Set input checkbox menjadi 0 jika kosong
 		if($married === NULL) {$married = 0;}
 		if($settled === NULL) {$settled = 0;}
 
-		// Submit data pegawai
+		// menyimpan data file yang diupload ke variabel $file
+		$file = $request->file('file');
+		$filename = time()."_".$file->getClientOriginalName();
+
+		// isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'pictures';
+		$file->move($tujuan_upload,$filename);
+
+		// Submit data maid----------------------------------------------------
 		DB::table('maids')->insert([
 			'maid_id' => $request->id,
 			'name' => $request->name,
@@ -58,12 +71,15 @@ class AgentController extends Controller
 			'settled' => $settled,
 			'religion' => $request->religion,
 			'exp_years' => $request->exp_years,
-			'description' => $request->description
+			'description' => $request->description,
+			'picture' => $filename,
 		]);
 
-		// alihkan halaman ke halaman pegawai
+		// alihkan halaman ke halaman maids
 		return redirect('/agent/view-maids');
 	}
+
+
 
 	public function edit($maid_id)
 	{
@@ -73,13 +89,24 @@ class AgentController extends Controller
 
 	public function update(Request $request)
 	{	
+
+		// Buat input2 jenis checkbox
 		$married = $request->married;
 		$settled = $request->settled;
 
+		// Set input checkbox menjadi 0 jika kosong
 		if($married === NULL) {$married = 0;}
 		if($settled === NULL) {$settled = 0;}
 
-		// Submit data pegawai
+		// menyimpan data file yang diupload ke variabel $file
+		$file = $request->file('file');
+		$filename = time()."_".$file->getClientOriginalName();
+
+		// isi dengan nama folder tempat kemana file diupload
+		$tujuan_upload = 'pictures';
+		$file->move($tujuan_upload,$filename);
+
+		// Submit data maid
 		DB::table('maids')->where('maid_id',$request->id)->update([
 			'maid_id' => $request->id,
 			'name' => $request->name,
@@ -89,10 +116,11 @@ class AgentController extends Controller
 			'settled' => $settled,
 			'religion' => $request->religion,
 			'exp_years' => $request->exp_years,
-			'description' => $request->description
+			'description' => $request->description,
+			'picture' => $filename,
 		]);
 
-		// alihkan halaman ke halaman pegawai
+		// alihkan halaman ke halaman maids
 		return redirect('/agent/view-maids');
 	}
 

@@ -2,7 +2,7 @@
     <?php $__env->startSection('content'); ?>
     <h3>Add Maid</h3>
     <br>
-	<form action="/agent/view-maids/add/store" method="post">
+	<form action="/agent/view-maids/add/store" method="post" enctype="multipart/form-data">
 		<?php echo e(csrf_field()); ?>
 
 		<table border="0">
@@ -33,6 +33,10 @@
 			</tr>
 				<th>description</th>	
 				<td>: <input type="text" name="description"></td>
+			</tr>
+			</tr>
+				<th>profile picture</th>	
+				<td>: <input type="file" name="picture"></td>
 			</tr>
 		</table>
 		<button type="submit">Submit</button>

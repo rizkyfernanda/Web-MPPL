@@ -15,6 +15,7 @@
 				<th>religion</th>
 				<th>experienced years</th>
 				<th>description</th>
+				<th>picture</th>
 				<th>options</th>		
 			</tr>
 			@foreach($maids as $maid)
@@ -28,9 +29,9 @@
 				<td>{{ $maid->religion }}</td>
 				<td>{{ $maid->exp_years }}</td>
 				<td>{{ $maid->description }}</td>
-				<td>
-				<a href="/agent/view-maids/edit/{{ $maid->maid_id }}">Edit</a>
-			</td>
+				<td><a href="{{ url('/pictures/'.$maid->picture) }}">
+					{{ $maid->picture }}</a></td>
+				<td><a href="/agent/view-maids/edit/{{ $maid->maid_id }}">Edit</a></td>
 			</tr>
 			@endforeach
 		</table>

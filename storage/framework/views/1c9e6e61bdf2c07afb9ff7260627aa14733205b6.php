@@ -8,22 +8,22 @@
     <a href="/agent/view-maids/edit/<?php echo e($maid->maid_id); ?>/delete">Delete maid</a>
     <br>
 
-	<form action="/agent/view-maids/edit/update" method="post">
+	<form action="/agent/view-maids/edit/update" method="post" enctype="multipart/form-data">
 		<?php echo e(csrf_field()); ?>
 
 		<table border="0">
 			<tr>
 				<th>id</th>
-				<td>: <input type="text" name="id" value="<?php echo e($maid->maid_id); ?>"></td>
+				<td>: <input type="text" name="id" value="<?php echo e($maid->maid_id); ?>"  required>></td>
 			</tr>
 				<th>name</th>
-				<td>: <input type="text" name="name" value="<?php echo e($maid->name); ?>"></td>
+				<td>: <input type="text" name="name" value="<?php echo e($maid->name); ?>"  required>></td>
 			</tr>
 				<th>age</th>
-				<td>: <input type="number" name="age" value="<?php echo e($maid->age); ?>"></td>
+				<td>: <input type="number" name="age" value="<?php echo e($maid->age); ?>"  required>></td>
 			</tr>
 				<th>salary</th>
-				<td>: <input type="number" name="salary" value="<?php echo e($maid->salary); ?>"></td>
+				<td>: <input type="number" name="salary" value="<?php echo e($maid->salary); ?>"  required>></td>
 			</tr>
 				<th>married</th>
 				<td>: <input type="checkbox" name="married" value="<?php echo e($maid->married); ?>"></td>
@@ -32,13 +32,17 @@
 				<td>: <input type="checkbox" name="settled" value="<?php echo e($maid->settled); ?>"></td>
 			</tr>
 				<th>religion</th>
-				<td>: <input type="string" name="religion" value="<?php echo e($maid->religion); ?>"></td>
+				<td>: <input type="string" name="religion" value="<?php echo e($maid->religion); ?>"  required>></td>
 			</tr>
 				<th>experienced years</th>
-				<td>: <input type="number" name="exp_years" value="<?php echo e($maid->exp_years); ?>"></td>
+				<td>: <input type="number" name="exp_years" value="<?php echo e($maid->exp_years); ?>" required>></td>
 			</tr>
 				<th>description</th>	
-				<td>: <input type="text" name="description" value="<?php echo e($maid->description); ?>"></td>
+				<td>: <input type="text" name="description" value="<?php echo e($maid->description); ?>" required>></td>
+			</tr>
+			</tr>
+				<th>profile picture</th>	
+				<td>: <input type="file" name="file" value="<?php echo e($maid->picture); ?>"></td>
 			</tr>
 		</table>
 		<button type="submit">Update</button>
