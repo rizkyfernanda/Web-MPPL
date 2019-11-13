@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2019 at 03:39 PM
+-- Generation Time: Nov 13, 2019 at 10:49 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -53,6 +53,7 @@ CREATE TABLE `maids` (
   `religion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `exp_years` int(11) NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -61,13 +62,13 @@ CREATE TABLE `maids` (
 -- Dumping data for table `maids`
 --
 
-INSERT INTO `maids` (`maid_id`, `name`, `age`, `salary`, `married`, `settled`, `religion`, `exp_years`, `description`, `created_at`, `updated_at`) VALUES
-(123, 'Eni Setiadi', 22, 1620000, 1, 1, 'Islam', 1, 'Suster Eni berasal dari Pemalang.', NULL, NULL),
-(234, 'aa', 20, 1200000, 1, NULL, 'Islam', 2, 'apaajalah', NULL, NULL),
-(12222, 'apa', 20, 10000000, 0, NULL, 'Islam', 2, 'apaajaallaa', NULL, NULL),
-(12331, 'apaja', 22, 2020220, 0, 0, 'Islam', 1, 'aoaajadskfjkasjdfa', NULL, NULL),
-(123123123, 'apa', 20, 20, 0, 0, 'hmm', 2, 'apa', NULL, NULL),
-(568568, 'apa', 24, 2000000, 0, 0, 'Islam', 1, 'apapaaaa', NULL, NULL);
+INSERT INTO `maids` (`maid_id`, `name`, `age`, `salary`, `married`, `settled`, `religion`, `exp_years`, `description`, `picture`, `created_at`, `updated_at`) VALUES
+(123, 'Eni Setiadi', 22, 1620000, 0, 0, 'Islam', 1, 'Suster Eni berasal dari Pemalang.', '1573680891_123.jpg', NULL, NULL),
+(234, 'aa', 20, 1200000, 1, NULL, 'Islam', 2, 'apaajalah', '', NULL, NULL),
+(12222, 'apa', 20, 10000000, 0, NULL, 'Islam', 2, 'apaajaallaa', '', NULL, NULL),
+(12331, 'apaja', 22, 2020220, 0, 0, 'Islam', 1, 'aoaajadskfjkasjdfa', '', NULL, NULL),
+(123123123, 'apa', 20, 20, 0, 0, 'hmm', 2, 'apa', '', NULL, NULL),
+(568568, 'apa', 24, 2000000, 0, 0, 'Islam', 1, 'apapaaaa', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -127,8 +128,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `type`) VALUES
-(1, 'Muhammad Rizky', 'mrizkyfer@gmail.com', NULL, '$2y$10$HqGDmDZBu1.8ekJLHGgmOuGGw2vJFLyVgMd9PIgN0H2mXUHZsqbi.', 'E82PsEocg9rejI6PRgjmG5CM5Z24QlP5Ip63Ee7W4OH3j8Kt2t8L2Xslntqd', '2019-11-11 22:57:41', '2019-11-12 00:48:02', 'agent'),
-(2, 'Ryan Ferdinand', 'ryhnmda@gmail.com', NULL, '$2y$10$XRvy99OVWAmqMO.kZyl3C.ETVOtMzqcuoFS.ATeC9Tr69fS6ewM2C', NULL, '2019-11-12 00:41:02', '2019-11-12 00:41:02', 'default');
+(1, 'Muhammad Rizky', 'mrizkyfer@gmail.com', NULL, '$2y$10$HqGDmDZBu1.8ekJLHGgmOuGGw2vJFLyVgMd9PIgN0H2mXUHZsqbi.', 'inrg747LE4pS7tLMCYW9nQxPfQMgj2iYqHi50dW9sh33wr0NkVwDr0bi6f3q', '2019-11-11 22:57:41', '2019-11-12 00:48:02', 'agent'),
+(2, 'Ryan Ferdinand', 'ryhnmda@gmail.com', NULL, '$2y$10$XRvy99OVWAmqMO.kZyl3C.ETVOtMzqcuoFS.ATeC9Tr69fS6ewM2C', NULL, '2019-11-12 00:41:02', '2019-11-12 00:41:02', 'default'),
+(4, 'agent', 'agent@agent.com', NULL, '$2y$10$AqHljZpYOMh.3tM0lTifyOhcR9FQxBJKea8G3nLfBoIMg6eNEkEmu', NULL, '2019-11-12 07:44:05', '2019-11-12 07:44:05', 'agent');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +181,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

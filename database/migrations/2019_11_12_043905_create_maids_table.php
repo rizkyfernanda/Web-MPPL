@@ -22,6 +22,7 @@ class CreateMaidsTable extends Migration
             $table->string('religion');
             $table->integer('experienced years');
             $table->text('description');
+            $table->file('picture');
             $table->timestamps();
         });
     }
