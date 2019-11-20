@@ -82,7 +82,7 @@ class AgentController extends Controller
 					$ability = trim($abilities[$i]," ");
 					$maids = DB::table('abilities')
 						->whereIn('maid_id', $maids)
-						->where('name','like', '%'.$ability.'%')
+						->where('ability','like', '%'.$ability.'%')
 						->pluck('maid_id');
 				}
 			}
@@ -96,7 +96,7 @@ class AgentController extends Controller
 			$maid->abilities = "";
 			for ($i = 0; $i < count($abilities); $i+=1) {
 				if ($maid->maid_id == $abilities[$i]->maid_id) {
-					$maid->abilities .= $abilities[$i]->name;
+					$maid->abilities .= $abilities[$i]->ability;
 					if ($i < count($abilities) -1 ){
 						$maid->abilities .= ", ";
 					}
@@ -160,16 +160,13 @@ class AgentController extends Controller
 
 		$abilites = explode(",", $request->abilities);
 
-		//Delete old abilities
-		DB::table('abilities')->where('maid_id', $request->id)->delete();
-
 		//Insert new abilities
 		if (count($abilites) > 1 || $abilites[0] != ""){	
 			for ($i = 0; $i < count($abilites); $i += 1) {
 				$ability = trim($abilites[$i], " ");
 				DB::table('abilities')->insert([
 					'maid_id' => $request->id,
-					'name' => $ability,
+					'ability' => $ability,
 				]);
 			}
 		}
@@ -183,12 +180,12 @@ class AgentController extends Controller
 	public function edit($maid_id)
 	{
 		$maids = DB::table('maids')->where('maid_id',$maid_id)->get();
-		$abilities = DB::table('abilities')->where('maid_id',$maid_id)->get('name');
+		$abilities = DB::table('abilities')->where('maid_id',$maid_id)->pluck('ability');
 		$appendedAbilities = "";
 		for ($x = 0; $x < count($abilities); $x+=1) {
-			$appendedAbilities .= $abilities[$x]->name;
+			$appendedAbilities .= $abilities[$x];
 			if ($x != count($abilities) - 1){
-				$appendedAbilities .= ",";
+				$appendedAbilities .= ", ";
 			}	
 		}
 		return view('agent-pages.edit-maid', ['maids' => $maids, 'abilities' => $appendedAbilities]);
@@ -229,16 +226,13 @@ class AgentController extends Controller
 
 		$abilites = explode(",", $request->abilities);
 
-		//Delete old abilities
-		DB::table('abilities')->where('maid_id', $request->id)->delete();
-
 		//Insert new abilities
 		if (count($abilites) > 1 || $abilites[0] != ""){	
 			for ($i = 0; $i < count($abilites); $i += 1) {
 				$ability = trim($abilites[$i], " ");
-				DB::table('abilities')->insert([
+				DB::table('abilities')->insertOrIgnore([
 					'maid_id' => $request->id,
-					'name' => $ability,
+					'ability' => $ability,
 				]);
 			}
 		}
