@@ -47,6 +47,12 @@
 			</tr>
 				<th> </th>
 				<td>*Seperate each ability with coma (,)</td>
+			</tr>
+				<th>preferences</th>
+				<td>: <input type="text" name="preferences" value="{{ $preferences }}"></td>		
+			</tr>
+				<th> </th>
+				<td>*Seperate each preference with coma (,)</td>
 	</table>
 		<button type="submit">Update</button>
 	</form>
