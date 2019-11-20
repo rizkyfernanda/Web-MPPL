@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 13, 2019 at 10:49 PM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.3.6
+-- Host: localhost
+-- Generation Time: Nov 20, 2019 at 01:10 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `maiddo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `abilities`
+--
+
+CREATE TABLE `abilities` (
+  `maid_id` int(11) NOT NULL,
+  `ability` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `abilities`
+--
+
+INSERT INTO `abilities` (`maid_id`, `ability`) VALUES
+(123, 'cuci'),
+(123, 'pel'),
+(123, 'sapu');
 
 -- --------------------------------------------------------
 
@@ -63,12 +83,13 @@ CREATE TABLE `maids` (
 --
 
 INSERT INTO `maids` (`maid_id`, `name`, `age`, `salary`, `married`, `settled`, `religion`, `exp_years`, `description`, `picture`, `created_at`, `updated_at`) VALUES
-(123, 'Eni Setiadi', 22, 1620000, 0, 0, 'Islam', 1, 'Suster Eni berasal dari Pemalang.', '1573680891_123.jpg', NULL, NULL),
-(234, 'aa', 20, 1200000, 1, NULL, 'Islam', 2, 'apaajalah', '', NULL, NULL),
-(12222, 'apa', 20, 10000000, 0, NULL, 'Islam', 2, 'apaajaallaa', '', NULL, NULL),
+(123, 'Eni Setiadi', 22, 1620000, 0, 0, 'Islam', 1, 'Suster Eni berasal dari Pemalang.', '1574251784_DJISpark.jpg', NULL, NULL),
 (12331, 'apaja', 22, 2020220, 0, 0, 'Islam', 1, 'aoaajadskfjkasjdfa', '', NULL, NULL),
 (123123123, 'apa', 20, 20, 0, 0, 'hmm', 2, 'apa', '', NULL, NULL),
-(568568, 'apa', 24, 2000000, 0, 0, 'Islam', 1, 'apapaaaa', '', NULL, NULL);
+(568568, 'apa', 24, 2000000, 0, 0, 'Islam', 1, 'apapaaaa', '', NULL, NULL),
+(1, 'test', 15, 150000, 1, 0, 'Budha', 4, 'tidak ada', '', NULL, NULL),
+(2, 'test 2', 25, 10000, 0, 1, 'asd', 7, 'asads', '', NULL, NULL),
+(3, 'test 3', 30, 500000, 1, 1, 'sad', 15, 'saasd', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -108,6 +129,24 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `preferences`
+--
+
+CREATE TABLE `preferences` (
+  `maid_id` int(11) NOT NULL,
+  `preference` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `preferences`
+--
+
+INSERT INTO `preferences` (`maid_id`, `preference`) VALUES
+(123, 'love cats');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -130,11 +169,17 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `type`) VALUES
 (1, 'Muhammad Rizky', 'mrizkyfer@gmail.com', NULL, '$2y$10$HqGDmDZBu1.8ekJLHGgmOuGGw2vJFLyVgMd9PIgN0H2mXUHZsqbi.', 'inrg747LE4pS7tLMCYW9nQxPfQMgj2iYqHi50dW9sh33wr0NkVwDr0bi6f3q', '2019-11-11 22:57:41', '2019-11-12 00:48:02', 'agent'),
 (2, 'Ryan Ferdinand', 'ryhnmda@gmail.com', NULL, '$2y$10$XRvy99OVWAmqMO.kZyl3C.ETVOtMzqcuoFS.ATeC9Tr69fS6ewM2C', NULL, '2019-11-12 00:41:02', '2019-11-12 00:41:02', 'default'),
-(4, 'agent', 'agent@agent.com', NULL, '$2y$10$AqHljZpYOMh.3tM0lTifyOhcR9FQxBJKea8G3nLfBoIMg6eNEkEmu', NULL, '2019-11-12 07:44:05', '2019-11-12 07:44:05', 'agent');
+(4, 'agent', 'agent@agent.com', NULL, '$2y$10$AqHljZpYOMh.3tM0lTifyOhcR9FQxBJKea8G3nLfBoIMg6eNEkEmu', '7d2FDKp16l35T2YXUIeYtxHmMDepIU0rYuy0JVgtBUGJMzXykQ3qvtGgHuuS', '2019-11-12 07:44:05', '2019-11-12 07:44:05', 'agent');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `abilities`
+--
+ALTER TABLE `abilities`
+  ADD PRIMARY KEY (`maid_id`,`ability`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -153,6 +198,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `preferences`
+--
+ALTER TABLE `preferences`
+  ADD PRIMARY KEY (`maid_id`,`preference`);
 
 --
 -- Indexes for table `users`
