@@ -107,29 +107,63 @@ class AgentController extends Controller
 		$preferences = DB::table('preferences')->whereIn('maid_id', $maids)->get();
 		$maids = DB::table('maids')->whereIn('maid_id', $maids)->get();
 		
+		//Count abilities per maid_id
+		$countAblPerMaidId = [];
+		foreach ($abilities as $object) {
+			if (isset($object->maid_id)) {
+				$maid_id = $object->maid_id;
+				if (!isset($countAblPerMaidId[$maid_id])) {
+					$countAblPerMaidId[$maid_id] = 0;
+				}
+				$countAblPerMaidId[$maid_id]++;
+			}
+		}
+
 		//Match abilities to maids
 		foreach ($maids as $maid) {
 			$maid->abilities = "";
-			for ($i = 0; $i < count($abilities); $i+=1) {
-				if ($maid->maid_id == $abilities[$i]->maid_id) {
+			$i = 0;
+			while ($i < count($abilities)) {
+				$j = 0;
+				while ($i < count($abilities) && $maid->maid_id == $abilities[$i]->maid_id) {
 					$maid->abilities .= $abilities[$i]->ability;
-					if ($i < count($abilities) -1 ){
+					if ($j < $countAblPerMaidId[$maid->maid_id] -1 ){
 						$maid->abilities .= ", ";
 					}
+					$j += 1;
+					$i += 1;
 				}
+				$i += 1;
+			}
+		}
+
+		//Count preferences per maid_id
+		$countPrefPerMaidId = [];
+		foreach ($preferences as $object) {
+			if (isset($object->maid_id)) {
+				$maid_id = $object->maid_id;
+				if (!isset($countPrefPerMaidId[$maid_id])) {
+					$countPrefPerMaidId[$maid_id] = 0;
+				}
+				$countPrefPerMaidId[$maid_id]++;
 			}
 		}
 
 		//Match preferences to maids
 		foreach ($maids as $maid) {
 			$maid->preferences = "";
-			for ($i = 0; $i < count($preferences); $i+=1) {
-				if ($maid->maid_id == $preferences[$i]->maid_id) {
+			$i = 0;
+			while ($i < count($preferences)) {
+				$j = 0;
+				while ($i < count($preferences) && $maid->maid_id == $preferences[$i]->maid_id) {
 					$maid->preferences .= $preferences[$i]->preference;
-					if ($i < count($preferences) -1 ){
+					if ($j < $countPrefPerMaidId[$maid->maid_id] -1 ){
 						$maid->preferences .= ", ";
 					}
+					$j += 1;
+					$i += 1;
 				}
+				$i += 1;
 			}
 		}
 
@@ -145,7 +179,7 @@ class AgentController extends Controller
 		$request->abilities = $rawAbilities;
 		$request->preferences = $rawPreferences;
 		// mengirim data maid ke view maids
-		return view('agent-pages.maids',['maids' => $maids, 'request' => $request]);
+		return view('agent-pages.maids',['maids' => $maids, 'request' => $request, 'preferences' => $preferences, 'abilities' => $abilities]);
 	}
 
 
@@ -225,6 +259,8 @@ class AgentController extends Controller
 	{
 		$maids = DB::table('maids')->where('maid_id',$maid_id)->get();
 		$abilities = DB::table('abilities')->where('maid_id',$maid_id)->pluck('ability');
+		$preferences = DB::table('preferences')->where('maid_id', $maid_id)->pluck('preference');
+
 		$appendedAbilities = "";
 		for ($x = 0; $x < count($abilities); $x+=1) {
 			$appendedAbilities .= $abilities[$x];
@@ -232,7 +268,16 @@ class AgentController extends Controller
 				$appendedAbilities .= ", ";
 			}	
 		}
-		return view('agent-pages.edit-maid', ['maids' => $maids, 'abilities' => $appendedAbilities]);
+
+		$appendedPreferences = "";
+		for ($x = 0; $x < count($preferences); $x+=1) {
+			$appendedPreferences .= $preferences[$x];
+			if ($x != count($preferences) - 1){
+				$appendedPreferences .= ", ";
+			}	
+		}
+
+		return view('agent-pages.edit-maid', ['maids' => $maids, 'abilities' => $appendedAbilities, 'preferences' => $appendedPreferences]);
 	} 
 
 	public function update(Request $request)
