@@ -37,7 +37,8 @@ class AgentController extends Controller
 		$max_salary = $request->max_salary;
 		$married = $request->married;
 		$settled = $request->settled;
-		$rawAbilites = $request->abilities;
+		$rawAbilities = $request->abilities;
+		$rawPreferences = $request->preferences;
 
 		if ($name === NULL) {$name = "";}
 		if ($min_exp_years === NULL) {$min_exp_years = 0;}
@@ -46,7 +47,8 @@ class AgentController extends Controller
 		if ($max_age === NULL) {$max_age = 99;}
 		if ($min_salary === NULL) {$min_salary = 0;}
 		if ($max_salary === NULL) {$max_salary = 9999999999;}
-		if ($rawAbilites === NULL) {$abilites = "";}
+		if ($rawAbilities === NULL) {$abilities = "";}
+		if ($rawPreferences === NULL) {$preferences = "";}
 		if ($married === NULL ) {
 			$married = -1;
 		} else if ($married == 1) {
@@ -75,8 +77,8 @@ class AgentController extends Controller
 			->where('settled', '<>', $settled)
 			->pluck('maid_id');
 		
-		if ($rawAbilites != "") {
-			$abilities = explode(',', $rawAbilites);
+		if ($rawAbilities != "") {
+			$abilities = explode(',', $rawAbilities);
 			if (count($abilities) > 0 || $abilities[0] != ""){
 				for ($i = 0; $i < count($abilities); $i += 1) {
 					$ability = trim($abilities[$i]," ");
@@ -88,7 +90,21 @@ class AgentController extends Controller
 			}
 		}
 
+		if ($rawPreferences != "") {
+			$preferences = explode(',', $rawPreferences);
+			if (count($preferences) > 0 || $preferences[0] != ""){
+				for ($i = 0; $i < count($preferences); $i += 1) {
+					$preference = trim($preferences[$i]," ");
+					$maids = DB::table('preferences')
+						->whereIn('maid_id', $maids)
+						->where('preference','like', '%'.$preference.'%')
+						->pluck('maid_id');
+				}
+			}
+		}
+
 		$abilities = DB::table('abilities')->whereIn('maid_id', $maids)->get();
+		$preferences = DB::table('preferences')->whereIn('maid_id', $maids)->get();
 		$maids = DB::table('maids')->whereIn('maid_id', $maids)->get();
 		
 		//Match abilities to maids
@@ -104,6 +120,19 @@ class AgentController extends Controller
 			}
 		}
 
+		//Match preferences to maids
+		foreach ($maids as $maid) {
+			$maid->preferences = "";
+			for ($i = 0; $i < count($preferences); $i+=1) {
+				if ($maid->maid_id == $preferences[$i]->maid_id) {
+					$maid->preferences .= $preferences[$i]->preference;
+					if ($i < count($preferences) -1 ){
+						$maid->preferences .= ", ";
+					}
+				}
+			}
+		}
+
 		$request->name = $name;
 		$request->min_exp_years = $min_exp_years;
 		$request->max_exp_years = $max_exp_years;
@@ -113,7 +142,8 @@ class AgentController extends Controller
 		$request->max_salary = $max_salary;
 		$request->married = $married;
 		$request->settled = $settled;
-		$request->abilities = $rawAbilites;
+		$request->abilities = $rawAbilities;
+		$request->preferences = $rawPreferences;
 		// mengirim data maid ke view maids
 		return view('agent-pages.maids',['maids' => $maids, 'request' => $request]);
 	}
@@ -158,18 +188,32 @@ class AgentController extends Controller
 			'picture' => $filename,
 		]);
 
-		$abilites = explode(",", $request->abilities);
+		$abilities = explode(",", $request->abilities);
 
 		//Insert new abilities
-		if (count($abilites) > 1 || $abilites[0] != ""){	
-			for ($i = 0; $i < count($abilites); $i += 1) {
-				$ability = trim($abilites[$i], " ");
-				DB::table('abilities')->insert([
+		if (count($abilities) > 1 || $abilities[0] != ""){	
+			for ($i = 0; $i < count($abilities); $i += 1) {
+				$ability = trim($abilities[$i], " ");
+				DB::table('abilities')->insertOrIgnore([
 					'maid_id' => $request->id,
 					'ability' => $ability,
 				]);
 			}
 		}
+
+		$preferences = explode(",", $request->preferences);
+		
+		//Insert new preferences
+		if (count($preferences) > 1 || $preferences[0] != ""){	
+			for ($i = 0; $i < count($preferences); $i += 1) {
+				$preference = trim($preferences[$i], " ");
+				DB::table('preferences')->insertOrIgnore([
+					'maid_id' => $request->id,
+					'preference' => $preference,
+				]);
+			}
+		}
+
 
 		// alihkan halaman ke halaman maids
 		return redirect('/agent/view-maids');
@@ -224,15 +268,28 @@ class AgentController extends Controller
 			'picture' => $filename,
 		]);
 
-		$abilites = explode(",", $request->abilities);
+		$abilities = explode(",", $request->abilities);
 
 		//Insert new abilities
-		if (count($abilites) > 1 || $abilites[0] != ""){	
-			for ($i = 0; $i < count($abilites); $i += 1) {
-				$ability = trim($abilites[$i], " ");
+		if (count($abilities) > 1 || $abilities[0] != ""){	
+			for ($i = 0; $i < count($abilities); $i += 1) {
+				$ability = trim($abilities[$i], " ");
 				DB::table('abilities')->insertOrIgnore([
 					'maid_id' => $request->id,
 					'ability' => $ability,
+				]);
+			}
+		}
+
+		$preferences = explode(",", $request->preferences);
+		
+		//Insert new preferences
+		if (count($preferences) > 1 || $preferences[0] != ""){	
+			for ($i = 0; $i < count($preferences); $i += 1) {
+				$preference = trim($preferences[$i], " ");
+				DB::table('preferences')->insertOrIgnore([
+					'maid_id' => $request->id,
+					'preference' => $preference,
 				]);
 			}
 		}

@@ -49,6 +49,13 @@
 				</tr>
 					<th> </th>
 					<td>*Seperate each ability with coma (,)</td>
+				</tr>
+					<th>preferences</th>
+					<td>: <input type="text" name="preferences" value="{{ $request['preferences'] }}"></td>		
+				</tr>
+					<th> </th>
+					<td>*Seperate each preference with coma (,)</td>
+				
 				</table>
 			<input type="submit" value="SEARCH">
 		</form>
@@ -64,6 +71,7 @@
 				<th>religion</th>
 				<th>experienced years</th>
 				<th>abilities</th>
+				<th>preferences</th>
 				<th>description</th>
 				<th>picture</th>
 				<th>options</th>		
@@ -79,6 +87,7 @@
 				<td>{{ $maid->religion }}</td>
 				<td>{{ $maid->exp_years }}</td>
 				<td>{{ $maid->abilities }}</td>
+				<td>{{ $maid->preferences }}</td>
 				<td>{{ $maid->description }}</td>
 				<td><a href="{{ url('/pictures/'.$maid->picture) }}">
 					{{ $maid->picture }}</a></td>
