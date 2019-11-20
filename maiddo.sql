@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2019 at 01:10 PM
+-- Generation Time: Nov 20, 2019 at 02:20 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -38,6 +38,7 @@ CREATE TABLE `abilities` (
 --
 
 INSERT INTO `abilities` (`maid_id`, `ability`) VALUES
+(4, 'lap kaca'),
 (123, 'cuci'),
 (123, 'pel'),
 (123, 'sapu');
@@ -83,13 +84,14 @@ CREATE TABLE `maids` (
 --
 
 INSERT INTO `maids` (`maid_id`, `name`, `age`, `salary`, `married`, `settled`, `religion`, `exp_years`, `description`, `picture`, `created_at`, `updated_at`) VALUES
-(123, 'Eni Setiadi', 22, 1620000, 0, 0, 'Islam', 1, 'Suster Eni berasal dari Pemalang.', '1574251784_DJISpark.jpg', NULL, NULL),
+(123, 'Eni Setiadi', 22, 1620000, 0, 0, 'Islam', 1, 'Suster Eni berasal dari Pemalang.', '1574253733_juicero_news.png', NULL, NULL),
 (12331, 'apaja', 22, 2020220, 0, 0, 'Islam', 1, 'aoaajadskfjkasjdfa', '', NULL, NULL),
 (123123123, 'apa', 20, 20, 0, 0, 'hmm', 2, 'apa', '', NULL, NULL),
 (568568, 'apa', 24, 2000000, 0, 0, 'Islam', 1, 'apapaaaa', '', NULL, NULL),
 (1, 'test', 15, 150000, 1, 0, 'Budha', 4, 'tidak ada', '', NULL, NULL),
 (2, 'test 2', 25, 10000, 0, 1, 'asd', 7, 'asads', '', NULL, NULL),
-(3, 'test 3', 30, 500000, 1, 1, 'sad', 15, 'saasd', '', NULL, NULL);
+(3, 'test 3', 30, 500000, 1, 1, 'sad', 15, 'saasd', '', NULL, NULL),
+(4, 'empat', 4, 40000, 1, 0, 'islam', 4, '4', '1574253800_others_cropped.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -142,7 +144,11 @@ CREATE TABLE `preferences` (
 --
 
 INSERT INTO `preferences` (`maid_id`, `preference`) VALUES
-(123, 'love cats');
+(4, 'allergic to animals'),
+(123, 'hate birds'),
+(123, 'love cats'),
+(123, 'love dogs'),
+(12331, 'hate cats');
 
 -- --------------------------------------------------------
 
