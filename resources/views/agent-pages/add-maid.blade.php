@@ -37,6 +37,11 @@
 				<th>profile picture</th>	
 				<td>: <input type="file" name="file"></td>
 			</tr>
+				<th>abilities</th>
+				<td>: <input type="text" name="abilities"></td>		
+			</tr>
+				<th> </th>
+				<td>*Seperate each ability with coma (,)</td>
 		</table>
 		<button type="submit">Submit</button>
 	</form>
