@@ -6,9 +6,10 @@
 
 .first-row img {
   width: 100%;
-  height: auto;
+  height: 165px;
   border-radius: 15px;
   filter: blur(1px);
+  filter: brightness(50%);
 }
 
 .first-row .content {

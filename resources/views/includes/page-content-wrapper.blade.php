@@ -47,9 +47,6 @@
       
         <img id="logo" src="image/logo.jpeg"/>
 
-        <!-- <button class="navbar-toggler" type="button"> 
-          <span class="bell-icon"></span>
-        </button>   -->
         <button class="navbar-toggler" type="button"  >
           <span class="navbar-toggler-icon" id="bell"></span>
          </button> 

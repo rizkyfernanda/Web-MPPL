@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
+Route::get('/search', function () {
+    return view('pages.search-form-1');
+});
+
 //Buat Customer
 Route::get('/check-identity', 'CustomerController@checkIdentity'); //Check Identity of maid
 Route::get('/check-identity/search/', 'CustomerController@identitySearch'); //Search Identity of maid
