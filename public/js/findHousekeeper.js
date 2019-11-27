@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-	alert('hi');
-
 	$( "#form1" ).show();
 	$( "#form2" ).hide();
 	$( "#form3" ).hide();
