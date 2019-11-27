@@ -20,41 +20,104 @@
       </div>
 
       <form class="form">
-        <label><img src="icon/age.jpeg"/> Age</label><br/>
-        <div class="choices">
-          <input type="radio" name="settled" value="1" > Yes
-          <input type="radio" name="settled" value="0" > No
-          <input type="radio" name="settled" value="-1"> Not Important
+        <p><img src="icon/age.jpeg"/> Age</p>
+        <div class="choices btn-group-toggle" data-toggle="buttons">
+          <label class="btn input-option btn-purple active">
+            <input type="radio" name="age" value="all" checked> All
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="age" value="young"> Young
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="age" value="adult"> Adult
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="age" value="elderly"> Elderly
+          </label>
         </div>
-        <label><img src="icon/salary.jpeg"/>Salary</label><br/>
-        <div class="choices">
-          <input type="radio" name="settled" value="1" > Yes
-          <input type="radio" name="settled" value="0" > No
-          <input type="radio" name="settled" value="-1"> Not Important
+
+        <p><img src="icon/salary.jpeg"/>Salary</p>
+        <div class="choices btn-group-toggle" data-toggle="buttons">
+          <label class="btn input-option btn-purple active">
+            <input type="radio" name="salary" value="all" checked> All
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="salary" value="young"> < 1 mio
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="salary" value="adult"> 1 - 3 mio
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="salary" value="elderly"> > 3 mio
+          </label>
         </div>
-        <label><img src="icon/married.jpeg"/>Marital State</label><br/>
-        <div class="choices">
-          <input type="radio" name="settled" value="1" > Yes
-          <input type="radio" name="settled" value="0" > No
-          <input type="radio" name="settled" value="-1"> Not Important
+
+        <p><img src="icon/married.jpeg"/>Marital State</p>
+        <div class="choices btn-group-toggle" data-toggle="buttons">
+          <label class="btn input-option btn-purple active">
+            <input type="radio" name="married" value="all" checked> All
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="married" value="young"> < 1 mio
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="married" value="adult"> 1 - 3 mio
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="married" value="elderly"> > 3 mio
+          </label>
         </div>
-        <label><img src="icon/settled.jpeg"/>Setted</label><br/>
-        <div class="choices">
-          <input type="radio" name="settled" value="1" > Yes
-          <input type="radio" name="settled" value="0" > No
-          <input type="radio" name="settled" value="-1"> Not Important
+
+        <p><img src="icon/settled.jpeg"/>Setted</p>
+        <div class="choices btn-group-toggle" data-toggle="buttons">
+          <label class="btn input-option btn-purple active">
+            <input type="radio" name="settled" value="all" checked> All
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="settled" value="young"> Yes
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="settled" value="adult"> No
+          </label>
         </div>
-        <label><img src="icon/religion.jpeg"/>Religion</label><br/>
-        <div class="choices">
-          <input type="radio" name="settled" value="1" > Yes
-          <input type="radio" name="settled" value="0" > No
-          <input type="radio" name="settled" value="-1"> Not Important
+
+        <p><img src="icon/religion.jpeg"/>Religion</p>
+        <div class="choices btn-group-toggle" data-toggle="buttons">
+          <label class="btn input-option btn-purple active">
+            <input type="radio" name="religion" value="all" checked> All
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="religion" value="young"> Moslem
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="religion" value="adult"> Christian
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="religion" value="elderly"> Hinduism
+          </label>
+          <label class="boundary btn input-option btn-purple">
+            <input type="radio" name="religion" value="elderly"> Konguchu
+          </label>
+          <label class="boundary btn input-option btn-purple">
+            <input type="radio" name="religion" value="elderly"> Buddhist
+          </label>
+          </div>
+        
+        <p><img src="icon/experience.jpeg"/>Experience</p>
+        <div class="choices btn-group-toggle" data-toggle="buttons">
+          <label class="btn input-option btn-purple active">
+            <input type="radio" name="salary" value="all" checked> All
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="salary" value="young"> < 1 mio
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="salary" value="adult"> 1 - 3 mio
+          </label>
+          <label class="btn input-option btn-purple">
+            <input type="radio" name="salary" value="elderly"> > 3 mio
+          </label>
         </div>
-        <label><img src="icon/experience.jpeg"/>Experience</label><br/>
-        <div class="choices">
-          <input type="radio" name="settled" value="1" > Yes
-          <input type="radio" name="settled" value="0" > No
-          <input type="radio" name="settled" value="-1"> Not Important
         </div>
       </form>
     </div>

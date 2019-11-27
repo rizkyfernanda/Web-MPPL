@@ -1,0 +1,16 @@
+.vertical-middle {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #cc80dc;
+  padding:10px 20px 10px 20px;
+  color: white;
+}
+
+.title {
+  padding-left: 0px !important;
+}
