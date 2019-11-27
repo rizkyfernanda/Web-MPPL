@@ -8,13 +8,13 @@
                 <div class="col-6 first-row left" onclick="window.location.href = '/check-identity';">
                     <img  src="image/dummy.jpg"/>
                     <div class="content">
-                        Check Identity
+                        <strong>Check Identity</strong>
                     </div>
                 </div>
                 <div class="col-6 first-row right" onclick="window.location.href = '/find-housekeeper';">
                     <img  src="image/dummy.jpg"/>
                     <div class="content">
-                        Find housekeeper
+                        <strong>Find housekeeper</strong>
                     </div>
                 </div>
             </div>

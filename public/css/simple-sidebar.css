@@ -41,14 +41,9 @@ body {
   margin-bottom: 0;
 }
 
-input {
-  outline: 0 !important;
-  border-width: 0 0 2px  !important;
-  border-radius: 0 !important;
-  border-color: blue !important;
-}
-input:focus {
-  border-color: none;
+.card-header {
+  font-size: 150%;
+  color: #FFAC00;
 }
 
 #header-subtitle {

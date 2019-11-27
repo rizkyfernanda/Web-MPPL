@@ -1,7 +1,7 @@
     @extends('layouts.default')
     @section('content')
 
-    <form action="/findHousekeeper/search" method="GET">
+    <form id="searchMaid" action="/findHousekeeper/search" method="GET">
    	{{ csrf_field() }}
 
     <div id="form1">
