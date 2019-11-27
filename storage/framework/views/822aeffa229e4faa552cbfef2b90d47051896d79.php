@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-                <div class="card-header my-2 bg-white"><?php echo e(__('Login')); ?></div>
+                <div class="card-header my-2 text-center bg-white"><strong><?php echo e(__('Login')); ?></strong></div>
 
                 <div class="card-body p-1">
                     <form method="POST" action="<?php echo e(route('login')); ?>">
