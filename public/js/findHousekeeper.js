@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-	e.preventDefault();
 	alert('hi');
 
 	$( "#form1" ).show();
