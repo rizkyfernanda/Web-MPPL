@@ -18,4 +18,4 @@
   @stack('styles')
   <!-- Ajax for live search -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  
+  <script src="https://use.fontawesome.com/ae5d7f35f1.js"></script>
