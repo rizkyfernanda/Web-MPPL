@@ -5,6 +5,7 @@
  */
 body {
   overflow-x: hidden;
+  font-family: lato;
 }
 
 #sidebar-wrapper {
@@ -31,6 +32,28 @@ body {
 
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
+}
+
+#header-title {
+  color: #CC80DC;
+  font-family: "Source Code Pro Semibold";
+  font-size: 250%;
+  margin-bottom: 0;
+}
+
+input {
+  outline: 0 !important;
+  border-width: 0 0 2px  !important;
+  border-radius: 0 !important;
+  border-color: blue !important;
+}
+input:focus {
+  border-color: none;
+}
+
+#header-subtitle {
+  font-weight: lighter;
+  font-size: 130% !important;
 }
 
 @media (min-width: 768px) {

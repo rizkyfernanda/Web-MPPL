@@ -11,7 +11,7 @@
                         Check Identity
                     </div>
                 </div>
-                <div class="col-6 first-row right" onclick="window.location.href = '/check-identity';">
+                <div class="col-6 first-row right" onclick="window.location.href = '/find-housekeeper';">
                     <img  src="image/dummy.jpg"/>
                     <div class="content">
                         Find housekeeper

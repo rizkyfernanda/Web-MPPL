@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('pages.index');
 });
+Route::get('/find-housekeeper', 'Controller@findHousekeeper');
 
 //Buat Customer
 Route::get('/check-identity', 'CustomerController@checkIdentity'); //Check Identity of maid

@@ -2,10 +2,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><?php echo e(__('Login')); ?></div>
 
-                <div class="card-body">
+                <div class="card-header my-2 bg-white"><?php echo e(__('Login')); ?></div>
+
+                <div class="card-body p-1">
                     <form method="POST" action="<?php echo e(route('login')); ?>">
                         <?php echo csrf_field(); ?>
 
@@ -94,8 +94,6 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
         </div>
     </div>
 </div>
