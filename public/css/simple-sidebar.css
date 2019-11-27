@@ -30,6 +30,26 @@ body {
   min-width: 100vw;
 }
 
+.btn-group-toggle .btn-primary {
+  background-color: #F9F2FB;
+  border-color: white;
+  color: black;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  background-color: #D992E8 !important;
+  border-color: white !important;
+  color: black !important;
+}
+
+.search-step {
+  background-color: orange;
+  color: white;
+  border-radius: 20px;
+  width: 40%;
+  font-weight: bold;
+}
+
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
 }

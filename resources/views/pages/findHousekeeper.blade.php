@@ -106,7 +106,7 @@
 		</div><br>
 
 		<br>
-		<button type="button" id="step1-next" class="btn btn-light">next</button>
+		<button type="button" id="step1-next" class="btn search-step float-right m-3">next</button>
 
 	</div>
 
@@ -120,15 +120,18 @@
 
 	    <input type="search" data-role="tagsinput" name="search" class="form-control py-0" placeholder="Type in any skills"><br>
 
+	    <div class="m-3">
 
-	    <small>suggestions</small><br>
-	    @foreach ($abilities as $ability)
-	    <button type="button" class="btn badge-pill badge-primary mb-5">{{ $ability->ability }}</button>
-	    @endforeach
+		    <div class="suggestions">suggestions:<br></div>
+		    @foreach ($abilities as $ability)
+		    <button type="button" class="btn badge-pill badge-primary">{{ $ability->ability }}</button>
+		    @endforeach
+
+		</div>
 
 	    <br>
-		<button type="button" id="step2-prev" class="btn btn-light">previous</button>
-		<button type="button" id="step2-next" class="btn btn-light">next</button>
+		<button type="button" id="step2-prev" class="btn search-step float-left m-3">previous</button>
+		<button type="button" id="step2-next" class="btn search-step float-right m-3">next</button>
 
 	</div>
 
@@ -141,15 +144,19 @@
 	    <br><br>
 
 	    <input type="search" class="form-control py-0" name="search" placeholder="Type in any skills"><br>
+	   
+	   	<div class="m-3">
 
-	    <small>suggestions</small><br>
-	    @foreach ($preferences as $preference)
-	    <button type="button" class="btn badge-pill badge-primary mb-5">{{ $preference->preference }}</button>
-	    @endforeach
+	    	<div class="suggestions">suggestions:<br></div>
+		    @foreach ($preferences as $preference)
+		    <button type="button" class="btn badge-pill badge-primary">{{ $preference->preference }}</button>
+		    @endforeach
+
+		</div>
 
 	    <br>
-	    <button type="button" id="step3-prev" class="btn btn-light">previous</button>
-		<button type="button" id="search" class="btn btn-light">search</button>
+		<button type="button" id="step2-prev" class="btn search-step float-left m-3">previous</button>
+		<button type="button" id="step2-next" class="btn search-step float-right m-3">next</button>
 
 	</div>
 	</form>
