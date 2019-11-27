@@ -19,11 +19,22 @@ class AgentController extends Controller
 
    	public function view_users()
 	{
-		// mengambil data dari table users
+			// mengambil data dari table users
     	$users = DB::table('users')->get();
  
     	// mengirim data user ke view index
     	return view('agent-pages.users',['users' => $users]);
+	}
+
+	public function maid_details($maid_id)
+	{
+		$maid = DB::table('maids')
+			->join('abilities', 'abilities.maid_id', '=', $maid_id)
+			->join('preferences', 'preferences.maid_id', '=', $maid_id)
+			->join('studies', 'studies.maid_id', '=', $maid_id)
+			->get();
+	
+		return views('agent-page.detail-maids',['maid' => $maid]);
 	}
 
 	public function view_maids(Request $request)
@@ -75,7 +86,10 @@ class AgentController extends Controller
 			->where('salary', '<=', $max_salary)
 			->where('married', '<>', $married)
 			->where('settled', '<>', $settled)
-			->pluck('maid_id');
+			->pluck('maid_id');DB::table('reven')->insert([
+				'user_id' => '1',
+				'maid_id' => $maid_id 
+			]);	
 		
 		if ($rawAbilities != "") {
 			$abilities = explode(',', $rawAbilities);
