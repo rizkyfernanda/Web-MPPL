@@ -2,8 +2,9 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="header p-4 pb-5 text-center">
+        	
+        	<div id="header-title" class="h1 text-center">Maiddo</div>
+        	<div id="header-subtitle">Choose for a minute, wait for the knock!</div>
 
-        Maiddo
-
-      </nav><?php /**PATH C:\xampp\htdocs\Web MPPL\resources\views/includes/page-content-login.blade.php ENDPATH**/ ?>
+        </div><?php /**PATH C:\xampp\htdocs\Web MPPL\resources\views/includes/page-content-login.blade.php ENDPATH**/ ?>
