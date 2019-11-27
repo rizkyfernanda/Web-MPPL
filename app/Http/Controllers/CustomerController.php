@@ -17,6 +17,7 @@ class CustomerController extends Controller
 		$user_id = Auth::user()->id;
 
 		$promos = DB::table('promos')
+			->orderBy('timestamp')
 			->limit(3)
 			->get();
 

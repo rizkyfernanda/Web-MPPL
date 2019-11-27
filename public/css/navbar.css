@@ -1,0 +1,22 @@
+.navbar-toggler {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: white !important;
+}
+
+#hamburger {
+  background-image:url("../icon/menu.svg") !important;  
+}
+
+#bell {
+  background-image: url("../icon/bell.svg") !important;
+}
+
+#bell-notif{
+  background-image: url("../icon/bell-notif.svg") !important;
+}
+
+#logo {
+  width: 100px;
+  height: auto;
+}
