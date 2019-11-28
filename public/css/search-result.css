@@ -11,6 +11,13 @@
   color: white;
 }
 
+.overlay {
+  background-color: rgba(0,0,0, 0.7);
+  display: none;
+  height: 100vh;
+  widows: 100vw;
+}
+
 .title {
   padding-left: 0px !important;
 }
