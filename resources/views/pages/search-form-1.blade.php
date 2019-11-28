@@ -14,9 +14,9 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container mx-3 flex-wrap">
       <div class="description">
-        <p class="purple">Match to out <span class="orange"> best pick </span> based on their background</p>
+        <p class="purple">Match to our <span class="orange"> best pick </span> based on their background</p>
       </div>
 
       <form class="form">
