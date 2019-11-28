@@ -20,6 +20,15 @@ Route::get('/search', function () {
     return view('pages.search-form-1');
 });
 
+Route::get('/search/result', function () {
+    return view('pages.search-result');
+});
+
+Route::get('/maid-details', function () {
+    return view('pages.maid-detail');
+});
+
+
 //Buat Customer
 Route::get('/check-identity', 'CustomerController@checkIdentity'); //Check Identity of maid
 Route::get('/check-identity/search/', 'CustomerController@identitySearch'); //Search Identity of maid

@@ -12,13 +12,28 @@
   color:#ffac00;
 }
 
-.form label {
+.form p {
   font-weight: 500;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 .form img {
   margin-right: 5px;
+}
+
+.input-option {
+  font-weight: 500 !important;
+}
+
+.btn-purple {
+  border-radius: 20px;
+  margin-right: 5px;
+  padding: 2px 10px 2px 10px !important;
+  background-color: #f9f2fb;
+}
+
+.active {
+  background-color: #cc80dc;
 }
 
 .vertical-middle {
@@ -28,9 +43,13 @@
   flex-direction: column;
 }
 
+.boundary {
+  margin-top: 7px;
+}
+
 .choices {
-  margin-left: 20px;
-  margin-bottom: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
 } 
 
 .description {
