@@ -74,7 +74,7 @@
           </label>
         </div>
 
-        <p><img src="icon/settled.jpeg"/>Setted</p>
+        <p><img src="icon/settled.jpeg"/>Settled</p>
         <div class="choices btn-group-toggle" data-toggle="buttons">
           <label class="btn input-option btn-purple active">
             <input type="radio" name="settled" value="all" checked> All
