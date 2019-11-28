@@ -3,9 +3,6 @@
     @push('styles')
         <link href="{{ asset('css/form-search.css') }}" rel="stylesheet">
     @endpush
-    @push('styles')
-    <script src="{{ asset('js/search-form.js') }}"></script>
-    @endpush
     <div class="row header">
       <div class="offset-1 col-2 vertical-middle">
         <div class="proses"> 1/3</div>

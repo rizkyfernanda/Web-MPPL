@@ -3,6 +3,9 @@
     @push('styles')
         <link href="{{ asset('css/search-result.css') }}" rel="stylesheet">
     @endpush
+    @push('styles')
+    <script src="{{ asset('js/search-form.js') }}"></script>
+    @endpush
     <div class="row header">
       <div class="col-1 vertical-middle">
       <i class="fas fa-chevron-left fa-lg"></i>
@@ -32,7 +35,7 @@
 
       <div class="row float-right">
         <div class="col-12">
-          <button class="purple edit-button" type="button">EDIT PREFERENCES</button>
+          <button class="purple edit-button" onclick="showOverlay()" type="button">EDIT PREFERENCES</button>
         </div>
       </div>
       <br>
