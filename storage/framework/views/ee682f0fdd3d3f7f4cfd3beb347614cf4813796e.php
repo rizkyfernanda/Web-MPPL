@@ -6,13 +6,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 first-row left" onclick="window.location.href = '/check-identity';">
-                    <img  src="image/dummy.jpg"/>
+                    <img  src="image/ktp.jpeg"/>
                     <div class="content">
                         <strong>Check Identity</strong>
                     </div>
                 </div>
-                <div class="col-6 first-row right" onclick="window.location.href = '/find-housekeeper';">
-                    <img  src="image/dummy.jpg"/>
+                <div class="col-6 first-row right" onclick="window.location.href = '/search';">
+                    <img  src="image/housekeepr.jpeg"/>
                     <div class="content">
                         <strong>Find housekeeper</strong>
                     </div>
@@ -31,15 +31,15 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="image/promo1.jpeg" alt="Los Angeles">
+                                <img src="image/promo1.jpeg" alt="Los Angeles">
                             </div>
 
                             <div class="carousel-item">
-                            <img src="image/promo1.jpeg" alt="Chicago">
+                                <img src="image/promo1.jpeg" alt="Chicago">
                             </div>
 
                             <div class="carousel-item">
-                            <img src="image/promo1.jpeg" alt="New York">
+                                <img src="image/promo1.jpeg" alt="New York">
                             </div>
                         </div>
 

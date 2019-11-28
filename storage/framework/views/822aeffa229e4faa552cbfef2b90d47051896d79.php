@@ -80,7 +80,7 @@ unset($__errorArgs, $__bag); ?>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn search-step w-25">
                                     <?php echo e(__('Login')); ?>
 
                                 </button>
@@ -93,7 +93,13 @@ unset($__errorArgs, $__bag); ?>
                                 <?php endif; ?>
                             </div>
                         </div>
-                    </form>
+                    </form><br>
+
+                    <div class="text-center float-center mt-5">
+                        Don't have an account?<br>
+                        <button class="btn w-50 mt-2 search-step" onclick="window.location.href = '/register';">Register</button>
+                    </div>
+
         </div>
     </div>
 </div>
