@@ -17,6 +17,18 @@ Route::get('/search', 'Controller@findHousekeeper'
 );
 
 
+Route::get('/maid-detail/', function () {
+    return view('pages.maid-detail');
+});
+
+Route::get('/search/result', function () {
+    return view('pages.search-result');
+});
+
+ Route::get('/maid-details', function () {
+     return view('pages.maid-detail');
+});
+
 
 //Buat Customer
 Route::get('/', 'CustomerController@get_home_data'); //Home data

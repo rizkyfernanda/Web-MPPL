@@ -31,15 +31,15 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="image/promo1.jpeg" alt="Los Angeles">
+                                <img src="image/<?php echo e($promos[0]->photo); ?>" alt="promo">
                             </div>
 
                             <div class="carousel-item">
-                                <img src="image/promo1.jpeg" alt="Chicago">
+                                <img src="image/<?php echo e($promos[1]->photo); ?>" alt="promo">
                             </div>
 
                             <div class="carousel-item">
-                                <img src="image/promo1.jpeg" alt="New York">
+                                <img src="image/<?php echo e($promos[2]->photo); ?>" alt="promo">
                             </div>
                         </div>
 
@@ -61,16 +61,16 @@
                 <div>
                 <div class="row">
                     <div class="col-4 third-row left">
-                        <img src="image/maid.png"/>
-                        <div class="maids-name">Maids Name</div>
+                        <img src="image/<?php echo e($saved_maid[0]->picture); ?>"/>
+                        <div class="maids-name"><?php echo e($saved_maid[0]->name); ?></div>
                     </div>
                     <div class="col-4 third-row mid">
-                        <img src="image/maid.png"/>
-                        <div class="maids-name">Maids Name</div>
+                        <img src="image/<?php echo e($saved_maid[1]->picture); ?>"/>
+                        <div class="maids-name"><?php echo e($saved_maid[1]->name); ?></div>
                     </div>
                     <div class="col-4 third-row right">
-                        <img src="image/maid.png"/>
-                        <div class="maids-name">Maids Name</div>
+                        <img src="image/<?php echo e($saved_maid[2]->picture); ?>"/>
+                        <div class="maids-name"><?php echo e($saved_maid[2]->name); ?></div>
                     </div>
                 </div>
             </div>
@@ -81,16 +81,16 @@
                 <div>
                 <div class="row">
                     <div class="col-4 third-row left">
-                        <img src="image/maid.png"/>
-                        <div class="maids-name">Maids Name</div>
+                        <img src="image/<?php echo e($recently_viewed[0]->picture); ?>"/>
+                        <div class="maids-name"><?php echo e($recently_viewed[0]->name); ?></div>
                     </div>
                     <div class="col-4 third-row mid">
-                        <img src="image/maid.png"/>
-                        <div class="maids-name">Maids Name</div>
+                        <img src="image/<?php echo e($recently_viewed[1]->picture); ?>"/>
+                        <div class="maids-name"><?php echo e($recently_viewed[1]->name); ?></div>
                     </div>
                     <div class="col-4 third-row right">
-                        <img src="image/maid.png"/>
-                        <div class="maids-name">Maids Name</div>
+                        <img src="image/<?php echo e($recently_viewed[2]->picture); ?>"/>
+                        <div class="maids-name"><?php echo e($recently_viewed[2]->name); ?></div>
                     </div>
                 </div>
             </div>

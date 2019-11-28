@@ -175,7 +175,7 @@
 
       <br>
     <button type="button" id="step3-prev" class="btn search-step float-left m-3">previous</button>
-    <button type="button" class="btn search-step float-right m-3">search</button>
+    <button type="button" class="btn search-step float-right m-3" onclick="window.location.href = '/search/result';">search</button>
 
   </div>
   </div>
