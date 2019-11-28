@@ -19,4 +19,5 @@
   <?php echo $__env->yieldPushContent('styles'); ?>
   <!-- Ajax for live search -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script><?php /**PATH C:\xampp\htdocs\Web MPPL\resources\views/includes/head.blade.php ENDPATH**/ ?>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <?php echo $__env->yieldPushContent('scripts'); ?><?php /**PATH C:\xampp\htdocs\Web MPPL\resources\views/includes/head.blade.php ENDPATH**/ ?>
