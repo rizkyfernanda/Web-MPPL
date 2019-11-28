@@ -11,6 +11,10 @@
         Housekeeper result
       </div>
     </div>
+
+    <div class="container-fluid overlay">
+
+    </div>
     <div class="container">
       <div class="row upper-info">
         <div class="col-3">

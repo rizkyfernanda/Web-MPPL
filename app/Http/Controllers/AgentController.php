@@ -87,10 +87,12 @@ class AgentController extends Controller
 			->where('salary', '<=', $max_salary)
 			->where('married', '<>', $married)
 			->where('settled', '<>', $settled)
-			->pluck('maid_id');DB::table('reven')->insert([
-				'user_id' => '1',
-				'maid_id' => $maid_id 
-			]);	
+			->pluck('maid_id');
+			
+			// DB::table('reven')->insert([
+			// 	'user_id' => '1',
+			// 	'maid_id' => $maid_id 
+			// ]);	
 		
 		if ($rawAbilities != "") {
 			$abilities = explode(',', $rawAbilities);
@@ -99,7 +101,7 @@ class AgentController extends Controller
 					$ability = trim($abilities[$i]," ");
 					$maids = DB::table('abilities')
 						->whereIn('maid_id', $maids)
-						->where('ability','like', '%'.$ability.'%')
+						->where('LCASE(ability)','like', '%'.strtolower($ability).'%')
 						->pluck('maid_id');
 				}
 			}
@@ -112,7 +114,7 @@ class AgentController extends Controller
 					$preference = trim($preferences[$i]," ");
 					$maids = DB::table('preferences')
 						->whereIn('maid_id', $maids)
-						->where('preference','like', '%'.$preference.'%')
+						->where('LCASE(preference)','like', '%'.strtolower($preference).'%')
 						->pluck('maid_id');
 				}
 			}

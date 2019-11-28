@@ -11,13 +11,71 @@
         Housekeeper Profile
       </div>
     </div>
-
     <div class="container">
       <div class="row">
-        <div class="col-6 upper-info">
-          <img src="image/maid.php">
-          
-
+        <div class="col-6 upper-info left">
+          <img class="maid-photo" src="../image/maid.png">
+        </div>
+        <div class="col-6 upper-info right">
+          <div class="name purple">
+            {{ $maid->name }}
+          </div>
+          <p class="info"><img src="../icon/age.jpeg"/>{{ $maid->age }} Years old</p>
+          <p class="info"><img src="../icon/salary.jpeg"/>Rp {{ $maid->salary }}/month</p>
+          <p class="info"><img src="../icon/married.jpeg"/>{{ $married[$maid->married] }}</p>
+          <p class="info"><img src="../icon/settled.jpeg"/>{{ $settled[$maid->settled] }}</p>
+          <p class="info"><img src="../icon/religion.jpeg"/>{{ $maid->religion }}</p>
+          <p class="info"><img src="../icon/experience.jpeg"/>{{ $maid->exp_years }} year experience</p>
         </div>
       </div>
+
+      <div class="subcontent-title purple">
+        <div class="title-text">Description</div>
+        <p class="desc">
+          {{ $maid->description }}
+      </p>
+      </div>
+
+      <div class="subcontent-title purple">
+        <div class="title-text"> Ability </div>
+        <div class="row">
+          @foreach ($abilities as $ability)
+            <div class="col-auto tags">
+              {{ $ability->ability }}
+            </div>
+          @endforeach
+        </div>
+      </div>
+
+      <div class="subcontent-title purple">
+        <div class="title-text"> Additional preferences </div>
+        <div class="row">
+          @foreach ($preferences as $preference)
+            <div class="col-auto tags">
+              {{ $preference->preference }}
+            </div>
+          @endforeach
+        </div>
+      </div>
+
+      <div class="subcontent-title purple last">
+        <div class="title-text"> Past Career</div>
+        <div class="timeline">
+          @foreach ($careers as $career)
+          <div class="container-tl right">
+            <div class="content-tl">
+              <div class="career-title">{{$career->description}}</div>
+              <div class="career-subtitle">{{$career->startdate}} s.d. {{$career->enddate}}</div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+      
+      <div class="row btn-container">
+        <div class="col-8 btn-wrapper">
+          <button class="btn-yellow" type="button"> I WANT TO HIRE HER </button>
+        </div>
+      </div>
+
     </div>

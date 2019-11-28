@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+// Route::get('/', function () {
+//     return view('pages.index');
+// });
 Route::get('/find-housekeeper', 'Controller@findHousekeeper'); //Search For Maid
 
 Route::get('/search', 'Controller@findHousekeeper'
@@ -23,12 +23,14 @@ Route::get('/search/result', function () {
     return view('pages.search-result');
 });
 
-Route::get('/maid-details', function () {
-    return view('pages.maid-detail');
-});
+// Route::get('/maid-details', function () {
+//     return view('pages.maid-detail');
+// });
 
 
 //Buat Customer
+Route::get('/', 'CustomerController@get_home_data'); //Home data
+Route::get('/maid-details/{maid_id}', 'CustomerController@maid_details'); //Maid details
 Route::get('/check-identity', 'CustomerController@checkIdentity'); //Check Identity of maid
 Route::get('/check-identity/search/', 'CustomerController@identitySearch'); //Search Identity of maid
 Route::get('/view-maids/search', 'CustomerController@search_maids'); //Search form 
