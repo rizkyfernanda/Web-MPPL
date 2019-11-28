@@ -67,13 +67,10 @@
             <input type="radio" name="married" value="all" checked> All
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="married" value="young"> < 1 mio
+            <input type="radio" name="married" value="yes"> Married
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="married" value="adult"> 1 - 3 mio
-          </label>
-          <label class="btn input-option btn-purple">
-            <input type="radio" name="married" value="elderly"> > 3 mio
+            <input type="radio" name="married" value="no"> Not Married
           </label>
         </div>
 
@@ -83,10 +80,10 @@
             <input type="radio" name="settled" value="all" checked> All
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="settled" value="young"> Yes
+            <input type="radio" name="settled" value="yes"> Settle
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="settled" value="adult"> No
+            <input type="radio" name="settled" value="no"> Do Not Settle
           </label>
         </div>
 
@@ -96,19 +93,19 @@
             <input type="radio" name="religion" value="all" checked> All
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="religion" value="young"> Moslem
+            <input type="radio" name="religion" value="moslem"> Moslem
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="religion" value="adult"> Christian
+            <input type="radio" name="religion" value="christian"> Christian
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="religion" value="elderly"> Hinduism
+            <input type="radio" name="religion" value="hinduism"> Hinduism
           </label>
           <label class="boundary btn input-option btn-purple">
-            <input type="radio" name="religion" value="elderly"> Konguchu
+            <input type="radio" name="religion" value="konguchu"> Konguchu
           </label>
           <label class="boundary btn input-option btn-purple">
-            <input type="radio" name="religion" value="elderly"> Buddhist
+            <input type="radio" name="religion" value="buddist"> Buddhist
           </label>
           </div>
         
@@ -118,13 +115,13 @@
             <input type="radio" name="salary" value="all" checked> All
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="salary" value="young"> < 1 mio
+            <input type="radio" name="salary" value="newbie"> < 1 year
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="salary" value="adult"> 1 - 3 mio
+            <input type="radio" name="salary" value="mediocre"> 1 - 3 year
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="salary" value="elderly"> > 3 mio
+            <input type="radio" name="salary" value="expert"> > 3 year
           </label>
         </div>
         </div>
