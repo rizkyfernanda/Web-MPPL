@@ -1,7 +1,7 @@
 .navbar-toggler {
   outline: none !important;
   box-shadow: none !important;
-  border-color: white !important;
+  border: none !important;
 }
 
 #hamburger {
