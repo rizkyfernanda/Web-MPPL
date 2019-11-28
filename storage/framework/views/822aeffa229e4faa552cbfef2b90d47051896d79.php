@@ -94,6 +94,8 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
                     </form>
+
+                    <div class="text-center float-center mt-5">Don't have an account?</div>
         </div>
     </div>
 </div>
