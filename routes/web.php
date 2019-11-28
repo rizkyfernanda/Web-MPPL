@@ -19,6 +19,10 @@ Route::get('/find-housekeeper', 'Controller@findHousekeeper'); //Search For Maid
 Route::get('/search', 'Controller@findHousekeeper'
 );
 
+Route::get('/maid-detail/', function () {
+    return view('pages.maid-detail');
+});
+
 Route::get('/search/result', function () {
     return view('pages.search-result');
 });

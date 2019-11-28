@@ -17,18 +17,18 @@
                 <div class="card mx-5 text-center float-center rounded">
 
                     <div class="card-body">
-                        <img class="float-center mx-auto w-75" src="<?php echo e(url('/pictures/'.$maid->picture)); ?>">
+                        <img class="float-center mx-auto w-75" src="<?php echo e(url('/image/'.$maid->picture)); ?>">
                         <h5 class="card-title pt-2"> <?php echo e($maid->name); ?></h5>
                         <div class="card-body m-0 p-0">
                             ID: <?php echo e($maid->maid_id); ?><br>
-                            <a class="link" href="#"><u>Read Profile</u></a>
+                            <a class="link" href="/maid-details/123"><u>Read Profile</u></a>
                         </div>
                     </div>
                     
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-            <br><div class="text-center mx-3">This candidate has <b class="link2"> no harmful background.</b> We recommend you to take a look into her background.</div>
+            <br><div class="text-center mx-3">This candidate has <b class="link2"> no harmful background.</b> We recommend you to take a look into her profile.</div><br>
 
         <?php else: ?>
            <div class="text-center">Not found. Make sure you fill in the correct ID</div><br>

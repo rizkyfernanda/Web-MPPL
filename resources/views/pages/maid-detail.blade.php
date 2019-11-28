@@ -5,7 +5,7 @@
     @endpush
     <div class="row header">
       <div class="col-1 vertical-middle">
-      <i class="fas fa-chevron-left fa-lg"></i>
+      <a onclick="history.back()"><i class="fas fa-chevron-left fa-lg"></i></a>
       </div>
       <div class="offset-3 col-6 title">
         Housekeeper Profile
