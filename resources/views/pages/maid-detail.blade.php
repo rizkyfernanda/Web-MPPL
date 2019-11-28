@@ -11,29 +11,28 @@
         Housekeeper Profile
       </div>
     </div>
-
     <div class="container">
       <div class="row">
         <div class="col-6 upper-info left">
-          <img class="maid-photo" src="image/maid.png">
+          <img class="maid-photo" src="../image/maid.png">
         </div>
         <div class="col-6 upper-info right">
           <div class="name purple">
-            {{ $maid['name'] }}
+            {{ $maid->name }}
           </div>
-          <p class="info"><img src="icon/age.jpeg"/>{{ $maid['age'] }} Years old</p>
-          <p class="info"><img src="icon/salary.jpeg"/>Rp {{ $maid['salary'] }}/month</p>
-          <p class="info"><img src="icon/married.jpeg"/>{{ $maid['married'] }}</p>
-          <p class="info"><img src="icon/settled.jpeg"/>{{ $maid['settled'] }}</p>
-          <p class="info"><img src="icon/religion.jpeg"/>{{ $maid['religion'] }}</p>
-          <p class="info"><img src="icon/experience.jpeg"/>{{ $maid['exp_years'] }} year experience</p>
+          <p class="info"><img src="../icon/age.jpeg"/>{{ $maid->age }} Years old</p>
+          <p class="info"><img src="../icon/salary.jpeg"/>Rp {{ $maid->salary }}/month</p>
+          <p class="info"><img src="../icon/married.jpeg"/>{{ $married[$maid->married] }}</p>
+          <p class="info"><img src="../icon/settled.jpeg"/>{{ $settled[$maid->settled] }}</p>
+          <p class="info"><img src="../icon/religion.jpeg"/>{{ $maid->religion }}</p>
+          <p class="info"><img src="../icon/experience.jpeg"/>{{ $maid->exp_years }} year experience</p>
         </div>
       </div>
 
       <div class="subcontent-title purple">
         <div class="title-text">Description</div>
         <p class="desc">
-          {{ $maid['description'] }}
+          {{ $maid->description }}
       </p>
       </div>
 
@@ -42,7 +41,7 @@
         <div class="row">
           @foreach ($abilities as $ability)
             <div class="col-auto tags">
-              {{ $ability['ability'] }}
+              {{ $ability->ability }}
             </div>
           @endforeach
         </div>
@@ -53,7 +52,7 @@
         <div class="row">
           @foreach ($preferences as $preference)
             <div class="col-auto tags">
-              {{ $preference['preference'] }}
+              {{ $preference->preference }}
             </div>
           @endforeach
         </div>
@@ -65,29 +64,11 @@
           @foreach ($careers as $career)
           <div class="container-tl right">
             <div class="content-tl">
-              <div class="career-title">{{$career['description']}}</div>
-              <div class="career-subtitle">{{$career['startdate']}} {{$career['enddate']}}</div>
+              <div class="career-title">{{$career->description}}</div>
+              <div class="career-subtitle">{{$career->startdate}} s.d. {{$career->enddate}}</div>
             </div>
           </div>
           @endforeach
-          <!-- <div class="container-tl right">
-            <div class="content-tl">
-              <div class="career-title">Graduated from Mid School</div>
-              <div class="career-subtitle">2016</div>
-            </div>
-          </div>
-          <div class="container-tl right">
-            <div class="content-tl">
-              <div class="career-title">Work as Nanny in Brebes</div>
-              <div class="career-subtitle">2017-2018</div>
-            </div>
-          </div>
-          <div class="container-tl right">
-            <div class="content-tl">
-              <div class="career-title">Work as Housekeeper in Brebes</div>
-              <div class="career-subtitle">2017-2018</div>
-            </div>
-          </div> -->
         </div>
       </div>
       

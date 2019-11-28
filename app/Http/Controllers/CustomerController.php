@@ -65,7 +65,7 @@ class CustomerController extends Controller
 		
 		$maid =  DB::table('maids')
 			->where('maid_id', $maid_id)
-			->get();
+			->get()[0];
 
 		$abilities = DB::table('abilities')
 			->where('maid_id', $maid_id)
@@ -81,11 +81,11 @@ class CustomerController extends Controller
 
 		$is_saved = DB::table('saved_maid')
 			->where('user_id', $user_id)
-			->where('maid_id'. $maid_id)
+			->where('maid_id', $maid_id)
 			->exists();
 
 		$is_ordered = DB::table('ordered_maid')
-			->where('maid_id'. $maid_id)
+			->where('maid_id', $maid_id)
 			->exists();
 
 		$is_viewed = DB::table('recently_viewed')
@@ -107,13 +107,25 @@ class CustomerController extends Controller
 			]);
 		}
 
-		return views('page.maid-details',
+		$married = array(
+			0 => "Not Married",
+			1 => "Married"
+		);
+
+		$settled = array(
+			0 => "Do Not Settle",
+			1 => "Settle"
+		); 
+
+		return view('pages.maid-detail',
 		['maid' => $maid, 
 		'is_saved' => $is_saved, 
 		'is_ordered' => $is_ordered, 
 		'abilities' => $abilities, 
 		'preferences' => $preferences, 
-		'careers' => $careers
+		'careers' => $careers,
+		'settled' => $settled,
+		'married' => $married
 		]);
 	}
 
@@ -186,7 +198,7 @@ class CustomerController extends Controller
 		}
 
 		$maids = DB::table('maids')
-			->where('religion', 'like', '%'.$religion.'%')
+			->where('LCASE(religion)', 'like', '%'.strtolower($religion).'%')
 			->where('exp_years', '>=' , $min_exp)
 			->where('exp_years', '<=' , $max_exp)
 			->where('age', '>=', $min_age)
