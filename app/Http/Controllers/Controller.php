@@ -19,7 +19,7 @@ class Controller extends BaseController
 		$preferences = DB::table('preferences')->inRandomOrder()->get();
 		$abilities = DB::table('abilities')->inRandomOrder()->get();
 
-		return view('pages.findHousekeeper', ['abilities' => $abilities, 'preferences' => $preferences]);
+		return view('pages.search-form-1', ['abilities' => $abilities, 'preferences' => $preferences]);
 	}
 
 }

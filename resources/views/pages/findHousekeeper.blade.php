@@ -156,11 +156,11 @@
 
 	    <br>
 		<button type="button" id="step2-prev" class="btn search-step float-left m-3">previous</button>
-		<button type="button" id="step2-next" class="btn search-step float-right m-3">next</button>
+		<button id="step3-next" class="btn search-step float-right m-3">search</button>
 
 	</div>
 	</form>
 
 	<script type="text/javascript" src="{{ asset('js/findHousekeeper.js') }}"></script>
 
-    @stop
+    @endsection

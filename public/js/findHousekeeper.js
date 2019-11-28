@@ -1,5 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function(e){
 
+	e.preventDefault();
 	$( "#form1" ).show();
 	$( "#form2" ).hide();
 	$( "#form3" ).hide();

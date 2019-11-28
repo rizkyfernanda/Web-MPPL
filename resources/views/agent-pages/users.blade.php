@@ -1,6 +1,6 @@
-    @extends('layouts.default-login')
+    @extends('layouts.default')
     @section('content')
-        <br>
+        <br><br>
         <h3>All Users</h3>
         <br><br>
 		<table border="1">

@@ -119,4 +119,9 @@ class CustomerController extends Controller
 			]);
 		}
 	}
+
+	public function search_maid(Request $request)
+	{
+		
+	}
 }

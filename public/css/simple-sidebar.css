@@ -71,6 +71,20 @@ body {
   font-size: 130% !important;
 }
 
+.rounded {
+  border-radius: 20px !important;
+}
+  
+.link {
+  color: #bc8dc4 !important;
+  font-weight: bold;
+}
+
+.link2 {
+  color: #ffa500 !important;
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;

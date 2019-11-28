@@ -1,4 +1,4 @@
-    @extends('layouts.default-login')
+    @extends('layouts.default')
     @section('content')
         <br>
         <h3>All Maids</h3>

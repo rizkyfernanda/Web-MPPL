@@ -39,6 +39,7 @@ class AgentController extends Controller
 
 	public function view_maids(Request $request)
 	{
+		$maid_id = $request->maid_id;
 		$name = $request->name;
 		$min_exp_years = $request->min_exp_years;
 		$max_exp_years = $request->max_exp_years;

@@ -51,7 +51,7 @@
       </button>
 
       
-        <a href="/"><img id="logo" src="image/logo.jpeg"/></a>
+        <a href="/"><img id="logo" src="{{url('/image/logo.jpeg')}}"/></a>
 
         <button class="navbar-toggler" type="button"  >
           <span class="navbar-toggler-icon" id="bell"></span>

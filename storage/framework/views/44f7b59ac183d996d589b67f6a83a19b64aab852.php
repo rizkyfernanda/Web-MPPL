@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><?php echo e(__('Register')); ?></div>
+        <div class="col-md-8">   
 
-                <div class="card-body">
+                <div class="card-header my-2 text-center bg-white"><strong><?php echo e(__('Register')); ?></strong></div>
+
+                <div class="card-body p-1">
                     <form method="POST" action="<?php echo e(route('register')); ?>">
                         <?php echo csrf_field(); ?>
 
@@ -103,7 +103,7 @@ unset($__errorArgs, $__bag); ?>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn search-step w-50 float-center">
                                     <?php echo e(__('Register')); ?>
 
                                 </button>
@@ -111,7 +111,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </form>
                 </div>
-            </div>
+
         </div>
     </div>
 </div>
