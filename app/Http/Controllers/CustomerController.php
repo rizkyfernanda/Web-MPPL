@@ -14,6 +14,14 @@ class CustomerController extends Controller
 		$this->middleware('auth');
 	}
 
+	public function result_maids(Request $request) {
+		$abilities = DB::table('abilities')->get();
+
+		$preferences = DB::table('preferences')->get();
+
+		return view('pages.search-result', ['abilities' => $abilities, 'preferences' => $preferences]);
+	}
+
 	public function get_home_data() {
 		
 		$user_id = Auth::user()->id;
