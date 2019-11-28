@@ -86,10 +86,12 @@ class AgentController extends Controller
 			->where('salary', '<=', $max_salary)
 			->where('married', '<>', $married)
 			->where('settled', '<>', $settled)
-			->pluck('maid_id');DB::table('reven')->insert([
-				'user_id' => '1',
-				'maid_id' => $maid_id 
-			]);	
+			->pluck('maid_id');
+			
+			// DB::table('reven')->insert([
+			// 	'user_id' => '1',
+			// 	'maid_id' => $maid_id 
+			// ]);	
 		
 		if ($rawAbilities != "") {
 			$abilities = explode(',', $rawAbilities);

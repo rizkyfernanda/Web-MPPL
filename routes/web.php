@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+// Route::get('/', function () {
+//     return view('pages.index');
+// });
 Route::get('/find-housekeeper', 'Controller@findHousekeeper'); //Search For Maid
 
 Route::get('/search', function () {
@@ -30,6 +30,7 @@ Route::get('/maid-details', function () {
 
 
 //Buat Customer
+Route::get('/', 'CustomerController@get_home_data'); //Home data
 Route::get('/check-identity', 'CustomerController@checkIdentity'); //Check Identity of maid
 Route::get('/check-identity/search/', 'CustomerController@identitySearch'); //Search Identity of maid
 Route::get('/view-maids/search', 'CustomerController@search_maids'); //Search form 

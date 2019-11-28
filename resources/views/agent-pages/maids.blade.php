@@ -4,8 +4,6 @@
         <h3>All Maids</h3>
         <a href="/agent/view-maids/add"> + Add Maid</a>
         <br><br>
-		<p>{{$preferences}}</p>
-		<p>{{$abilities}}</p>
 		
 		<p>Search for maids :</p>
 		<form action="/agent/view-maids" method="GET">
