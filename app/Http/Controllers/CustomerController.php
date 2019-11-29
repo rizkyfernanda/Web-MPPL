@@ -76,11 +76,11 @@ class CustomerController extends Controller
 			->get()[0];
 
 		$abilities = DB::table('abilities')
-			->where('maid_id', $maid_id)
+			->limit(4)
 			->get();
 
 		$preferences = DB::table('preferences')
-			->where('maid_id', $maid_id)
+			->limit(4)
 			->get();
 
 		$careers = DB::table('careers')

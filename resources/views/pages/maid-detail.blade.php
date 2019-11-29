@@ -36,7 +36,7 @@
       <div class="subcontent-title purple">
         <div class="title-text">Description</div>
         <p class="desc">
-          {{ $maid->description }}
+          Sust. Eni berasal dari Pemalang. berpengalaman mengasuh anak usia 3-4 tahun di Brebes. Bisa naik motor. Siap mengerjakan semua tugas rumah. Bebenah setrika, sigap. Pandai memasak. Bisa memasak menu Korea.
       </p>
       </div>
 
