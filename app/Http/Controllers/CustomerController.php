@@ -266,40 +266,37 @@ class CustomerController extends Controller
 		
 	}
 
-	public function save_maid(Request $request)
+	public function save_maid($maid_id)
 	{
-		$maid_id = $request->maid_id;
-		$user_id = $request->user_id;
-		// $user_id = Auth::user()->id;
-
+		$user_id = Auth::user()->id;
 		$is_not_saved = DB::table('saved_maid')
 			->where('user_id', $user_id)
-			->where('maid_id'. $maid_id)
-			->doesntExists();
+			->where('maid_id', $maid_id)
+			->doesntExist();
 		
 		if ($is_not_saved) {
 			DB::table('saved_maid')->insert([
 				'user_id' => $user_id,
 				'maid_id' => $maid_id
 			]);
+			return response()->json(array('success' => true));
 		}
 	}
 
-	public function order_maid(Request $request)
+	public function order_maid($maid_id)
 	{
-		$maid_id = $request->maid_id;
-		$user_id = $request->user_id;
-		// $user_id = Auth::user()->id;
+		$user_id = Auth::user()->id;
 
 		$is_not_ordered = DB::table('ordered_maid')
-			->where('maid_id'. $maid_id)
-			->doenstExists();
+			->where('maid_id', $maid_id)
+			->doesntExist();
 				
 		if ($is_not_ordered) {
 			DB::table('ordered_maid')->insert([
 				'user_id' => $user_id,
 				'maid_id' => $maid_id
 			]);
+			return response()->json(array('success' => true));
 		}
 	}
 

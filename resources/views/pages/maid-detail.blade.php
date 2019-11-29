@@ -22,6 +22,7 @@
         <div class="col-6 upper-info right">
           <div class="name purple">
             {{ $maid->name }}
+            <img onclick="saveMaid({{$maid->maid_id}})" src="../icon/bookmark{{($is_saved) ? '(1)' : ''}}.svg" class="float-right bookmark">
           </div>
           <p class="info"><img src="../icon/age.jpeg"/>{{ $maid->age }} Years old</p>
           <p class="info"><img src="../icon/salary.jpeg"/>Rp {{ $maid->salary }}/month</p>
@@ -77,7 +78,7 @@
       
       <div class="row btn-container">
         <div class="col-8 btn-wrapper">
-          <button onclick="WA()" class="btn-yellow" type="button"> I WANT TO HIRE HER </button>
+          <button id="hire" onclick="orderMaid({{$maid->maid_id}})" class="btn-yellow {{ ($is_ordered) ? 'bg-grey': 'bg-yellow'}}" type="button" {{ ($is_ordered) ? 'disabled': ''}}> I WANT TO HIRE HER </button>
         </div>
       </div>
 
