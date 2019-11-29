@@ -29,6 +29,11 @@
   align-content: center;
 }
 
+.popup {
+  display: none;
+  z-index: 99;
+}
+
 .edit-form {
   background-color: white;
   position: absolute;
@@ -41,6 +46,7 @@
   padding-left: 15px;
   padding-top: 25px;
   padding-bottom: 130px;
+  z-index: 99; 
 }
 
 .edit-title {

@@ -101,7 +101,7 @@ class AgentController extends Controller
 					$ability = trim($abilities[$i]," ");
 					$maids = DB::table('abilities')
 						->whereIn('maid_id', $maids)
-						->where('LCASE(ability)','like', '%'.strtolower($ability).'%')
+						->where('ability','like', '%'.$ability.'%')
 						->pluck('maid_id');
 				}
 			}
@@ -114,7 +114,7 @@ class AgentController extends Controller
 					$preference = trim($preferences[$i]," ");
 					$maids = DB::table('preferences')
 						->whereIn('maid_id', $maids)
-						->where('LCASE(preference)','like', '%'.strtolower($preference).'%')
+						->where('preference','like', '%'.$preference.'%')
 						->pluck('maid_id');
 				}
 			}

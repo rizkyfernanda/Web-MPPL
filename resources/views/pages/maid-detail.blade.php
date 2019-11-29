@@ -3,6 +3,9 @@
     @push('styles')
         <link href="{{ asset('css/maid-details.css') }}" rel="stylesheet">
     @endpush
+    @push('scripts')
+      <script src="{{ asset('js/WA.js') }}"></script>
+    @endpush
     <div class="row header">
       <div class="col-1 vertical-middle">
       <a onclick="history.back()"><i class="fas fa-chevron-left fa-lg"></i></a>
@@ -74,7 +77,7 @@
       
       <div class="row btn-container">
         <div class="col-8 btn-wrapper">
-          <button class="btn-yellow" type="button"> I WANT TO HIRE HER </button>
+          <button onclick="WA()" class="btn-yellow" type="button"> I WANT TO HIRE HER </button>
         </div>
       </div>
 

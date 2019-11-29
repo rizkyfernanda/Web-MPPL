@@ -145,6 +145,9 @@ class CustomerController extends Controller
 		$settled = $request->settled;
 		$religion = $request->religion;
 		$exp = $request->exp;
+		$rawAbilities = $request->abilities;
+		$rawPreferences = $request->preferences;
+		$mockReligion = $request->religion;
 
 		if ($age == 'young') {
 			$min_age = 0;
@@ -206,8 +209,15 @@ class CustomerController extends Controller
 			$max_exp = 9999;
 		}
 
+		if ($mockReligion == 'all') {
+			$mockReligion = '%';
+		}
+
+		if ($rawAbilities === NULL) {$qAbilities = "";}
+		if ($rawPreferences === NULL) {$qPreferences = "";}
+
 		$maids = DB::table('maids')
-			->where('LCASE(religion)', 'like', '%'.strtolower($religion).'%')
+			->where('religion', 'like', '%'.$mockReligion.'%')
 			->where('exp_years', '>=' , $min_exp)
 			->where('exp_years', '<=' , $max_exp)
 			->where('age', '>=', $min_age)
@@ -217,7 +227,44 @@ class CustomerController extends Controller
 			->where('married', '<>', $married)
 			->where('settled', '<>', $settled)
 			->pluck('maid_id');
-			
+		
+		if ($rawAbilities != "") {
+			$qAbilities = explode(',', $rawAbilities);
+			if (count($qAbilities) > 0 || $qAbilities[0] != ""){
+				for ($i = 0; $i < count($qAbilities); $i += 1) {
+					$ability = trim($qAbilities[$i]," ");
+					$maids = DB::table('abilities')
+						->whereIn('maid_id', $maids)
+						->where('ability','like', '%'.$ability.'%')
+						->pluck('maid_id');
+				}
+			}
+		}
+
+		if ($rawPreferences != "") {
+			$qPreferences = explode(',', $rawPreferences);
+			if (count($qPreferences) > 0 || $qPreferences[0] != ""){
+				for ($i = 0; $i < count($qPreferences); $i += 1) {
+					$preference = trim($qPreferences[$i]," ");
+					$maids = DB::table('preferences')
+						->whereIn('maid_id', $maids)
+						->where('preference','like', '%'.$preference.'%')
+						->pluck('maid_id');
+				}
+			}
+		}
+
+		$maids = DB::table('maids')->whereIn('maid_id', $maids)->get();
+		$abilities = DB::table('abilities')->get();
+		$preferences = DB::table('preferences')->get();
+
+		return view('pages.search-result', [
+			'abilities' => $abilities, 
+			'preferences' => $preferences,
+			'maids' => $maids,
+			'request' => $request,
+			]);
+		
 	}
 
 	public function save_maid(Request $request)

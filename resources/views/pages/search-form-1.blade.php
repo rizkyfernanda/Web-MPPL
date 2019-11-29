@@ -26,7 +26,7 @@
         <p class="purple">Match to our <span class="orange"> best pick </span> based on their background</p>
       </div>
 
-    <form class="form">
+    <form class="form" method="get" action="/search/result">
       <div class="form1">
 
         <p><img src="icon/age.jpeg"/> Age</p>
@@ -112,16 +112,16 @@
         <p><img src="icon/experience.jpeg"/>Experience</p>
         <div class="choices btn-group-toggle" data-toggle="buttons">
           <label class="btn input-option btn-purple active">
-            <input type="radio" name="salary" value="all" checked> All
+            <input type="radio" name="exp" value="all" checked> All
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="salary" value="newbie"> < 1 year
+            <input type="radio" name="exp" value="newbie"> < 1 year
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="salary" value="mediocre"> 1 - 3 year
+            <input type="radio" name="exp" value="mediocre"> 1 - 3 year
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="salary" value="expert"> > 3 year
+            <input type="radio" name="exp" value="expert"> > 3 year
           </label>
         </div>
         </div>
@@ -136,7 +136,7 @@
       <div class="description purple">What <span class="orange">skills</span> do you want for your housekeeper?</div>
       <br>
 
-      <input type="search" data-role="tagsinput" name="search" class="form-control py-0" placeholder="Use commma (,) to add multiple skills"><br>
+      <input type="search" data-role="tagsinput" name="abilities" class="form-control py-0" placeholder="Use commma (,) to add multiple skills"><br>
 
         <div class="suggestions description purple">suggestions:<br></div>
         
@@ -163,7 +163,7 @@
         <p class="purple">Any additional preferences?</p>
       </div>
 
-      <input type="search" data-role="tagsinput" name="search" class="form-control py-0" placeholder="Use commma (,) to add multiple skills"><br>
+      <input type="search" data-role="tagsinput" name="preferences" class="form-control py-0" placeholder="Use commma (,) to add multiple preferences"><br>
 
         <div class="suggestions description purple">suggestions:<br></div>
         
@@ -175,7 +175,7 @@
 
       <br>
     <button type="button" id="step3-prev" class="btn search-step float-left m-3">previous</button>
-    <button type="button" class="btn search-step float-right m-3" onclick="window.location.href = '/search/result';">search</button>
+    <button type="submit" class="btn search-step float-right m-3">search</button>
 
   </div>
   </div>
