@@ -145,17 +145,17 @@ class CustomerController extends Controller
 		$religion = $request->religion;
 		$exp = $request->exp;
 
-		if ($age == 'all') {
-			$min_age = 0;
-			$max_age = 999;
-		} else if ($age == 'young') {
+		if ($age == 'young') {
 			$min_age = 0;
 			$max_age = 17;
 		} else if ($age == 'adult') {
 			$min_age = 18;
 			$max_age = 40;
-		} else {
+		} else if ($age == 'elderly') {
 			$min_age = 41;
+			$max_age = 999;
+		} else {
+			$min_age = 0;
 			$max_age = 999;
 		}
 
