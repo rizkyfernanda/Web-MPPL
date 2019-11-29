@@ -25,30 +25,29 @@ class CustomerController extends Controller
 	public function get_home_data() {
 		
 		$user_id = Auth::user()->id;
-		print_r($user_id);
 
 		$promos = DB::table('promos')
-			->orderBy('timestamp', 'desc')
+			->orderBy('timestamp', "desc")
 			->limit(3)
 			->get();
 
 		$saved_maid = DB::table('saved_maid')
 			->join('maids', 'maids.maid_id', '=', 'saved_maid.maid_id')
-			->where('user_id', $user_id)
-			->orderBy('timestamp', 'desc')
+			->where('user_id', "4")
+			->orderBy('timestamp', "desc")
 			->limit(3)
 			->get();
 
 		$ordered_maid = DB::table('ordered_maid')
 			->join('maids', 'maids.maid_id', '=', 'ordered_maid.maid_id')
-			->where('user_id', $user_id)
-			->orderBy('timestamp', 'desc')
+			->where('user_id', "4")
+			->orderBy('timestamp',"desc")
 			->limit(3)
 			->get();
 
 		$recently_viewed = DB::table('recently_viewed')
 			->join('maids', 'maids.maid_id', '=', 'recently_viewed.maid_id')
-			->where('user_id', $user_id)
+			->where('user_id', "4")
 			->orderBy('timestamp', 'desc')
 			->limit(3)
 			->get();
