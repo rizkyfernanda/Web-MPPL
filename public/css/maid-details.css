@@ -9,6 +9,12 @@
   color: #cc80dc;
 }
 
+.bookmark {
+  width: 30px;
+  height: auto;
+  padding-top: 10px;
+}
+
 .yellow {
   color: #ffac00;
 }

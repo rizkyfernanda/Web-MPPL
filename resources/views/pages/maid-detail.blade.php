@@ -22,6 +22,7 @@
         <div class="col-6 upper-info right">
           <div class="name purple">
             {{ $maid->name }}
+            <img onclick="saveMaid({{$maid->maid_id}})" src="../icon/bookmark{{($is_saved) ? '(1)' : ''}}.svg" class="float-right bookmark">
           </div>
           <p class="info"><img src="../icon/age.jpeg"/>{{ $maid->age }} Years old</p>
           <p class="info"><img src="../icon/salary.jpeg"/>Rp {{ $maid->salary }}/month</p>
