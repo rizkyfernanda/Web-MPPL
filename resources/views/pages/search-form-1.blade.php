@@ -93,7 +93,7 @@
             <input type="radio" name="religion" value="all" checked> All
           </label>
           <label class="btn input-option btn-purple">
-            <input type="radio" name="religion" value="moslem"> Moslem
+            <input type="radio" name="religion" value="islam"> Islam
           </label>
           <label class="btn input-option btn-purple">
             <input type="radio" name="religion" value="christian"> Christian
