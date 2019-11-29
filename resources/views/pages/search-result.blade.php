@@ -89,8 +89,8 @@
           <label class="btn input-option btn-purple {{ ($request->religion == 'all') ? 'active' : '' }}">
             <input type="radio" name="religion" value="all" {{ ($request->religion == 'all') ? 'checked' : '' }}> All
           </label>
-          <label class="btn input-option btn-purple {{ ($request->religion == 'moslem') ? 'active' : '' }}">
-            <input type="radio" name="religion" value="moslem" {{ ($request->religion == 'moslem') ? 'checked' : '' }}> Moslem
+          <label class="btn input-option btn-purple {{ ($request->religion == 'islam') ? 'active' : '' }}">
+            <input type="radio" name="religion" value="islam" {{ ($request->religion == 'islam') ? 'checked' : '' }}> Islam
           </label>
           <label class="btn input-option btn-purple {{ ($request->religion == 'christian') ? 'active' : '' }}">
             <input type="radio" name="religion" value="christian" {{ ($request->religion == 'christian') ? 'checked' : '' }}> Christian
