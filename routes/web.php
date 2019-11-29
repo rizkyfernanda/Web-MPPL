@@ -26,7 +26,7 @@ Route::get('/view-maids/search', 'CustomerController@search_maids'); //Search fo
 Route::get('/view-maids/result', 'CustomerController@result_maids'); //Result from search maid
 Route::get('/view-maids/{maid_id}', 'CustomerController@maid_details'); //Maid details
 Route::get('/save-maid/{maid_id}', 'CustomerController@save_maid'); //Add saved maid
-Route::post('/view-maids/order-maid', 'CustomerController@order_maid'); //Add ordered maid
+Route::get('/order-maid/{maid_id}', 'CustomerController@order_maid'); //Add ordered maid
 
 //Buat Agent
 Route::get('/agent', 'AgentController@index')->middleware('is_agent');

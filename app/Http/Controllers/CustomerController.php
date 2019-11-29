@@ -283,20 +283,20 @@ class CustomerController extends Controller
 		}
 	}
 
-	public function order_maid(Request $request)
+	public function order_maid($maid_id)
 	{
-		$maid_id = $request->maid_id;
 		$user_id = Auth::user()->id;
 
 		$is_not_ordered = DB::table('ordered_maid')
 			->where('maid_id', $maid_id)
-			->doenstExists();
+			->doesntExist();
 				
 		if ($is_not_ordered) {
 			DB::table('ordered_maid')->insert([
 				'user_id' => $user_id,
 				'maid_id' => $maid_id
 			]);
+			return response()->json(array('success' => true));
 		}
 	}
 

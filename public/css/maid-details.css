@@ -109,12 +109,19 @@
   margin-bottom: 30px;
 }
 
+.bg-grey {
+  background-color: #636263;
+}
+
+.bg-yellow {
+  background-color: #ffac00;
+}
+
 .btn-yellow {
   border-radius: 20px;
   color: white;
   margin-right: 5px;
   padding: 5px 30px 5px 30px !important;
-  background-color: #ffac00;
   /* background: none; */
   border: none;
 }
