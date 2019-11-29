@@ -26,6 +26,10 @@ body {
   width: 15rem;
 }
 
+.desc {
+  opacity: 70%;
+}
+
 #page-content-wrapper {
   min-width: 100vw;
 }

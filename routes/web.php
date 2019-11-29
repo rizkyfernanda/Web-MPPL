@@ -16,26 +16,12 @@ Route::get('/find-housekeeper', 'Controller@findHousekeeper'); //Search For Maid
 Route::get('/search', 'Controller@findHousekeeper'
 );
 
-
-Route::get('/maid-detail/', function () {
-    return view('pages.maid-detail');
-});
-
-Route::get('/search/result', function () {
-    return view('pages.search-result');
-});
-
- Route::get('/maid-details', function () {
-     return view('pages.maid-detail');
-});
-
-
 //Buat Customer
 Route::get('/', 'CustomerController@get_home_data'); //Home data
 Route::get('/maid-details/{maid_id}', 'CustomerController@maid_details'); //Maid details
 Route::get('/check-identity', 'CustomerController@checkIdentity'); //Check Identity of maid
 Route::get('/check-identity/search/', 'CustomerController@identitySearch'); //Search Identity of maid
-Route::get('/search/result', 'CustomerController@result_maids'); //Show search result
+Route::get('/search/result', 'CustomerController@search_maids'); //Show search result
 Route::get('/view-maids/search', 'CustomerController@search_maids'); //Search form 
 Route::get('/view-maids/result', 'CustomerController@result_maids'); //Result from search maid
 Route::get('/view-maids/{maid_id}', 'CustomerController@maid_details'); //Maid details
