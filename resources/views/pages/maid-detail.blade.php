@@ -78,7 +78,7 @@
       
       <div class="row btn-container">
         <div class="col-8 btn-wrapper">
-          <button id="hire" onclick="orderMaid({{$maid->maid_id}})" class="btn-yellow {{ ($is_ordered) ? 'bg-grey': 'bg-yellow'}}" type="button" {{ ($is_ordered) ? 'disabled': ''}}> I WANT TO HIRE HER </button>
+          <button id="hire" onclick="orderMaid({{$maid->maid_id}})" class="btn-yellow {{ ($is_ordered) ? 'bg-grey': ''}}" type="button" {{ ($is_ordered) ? 'disabled': ''}}> I WANT TO HIRE HER </button>
         </div>
       </div>
 
